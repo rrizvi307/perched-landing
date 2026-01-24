@@ -73,11 +73,9 @@ export default function Page() {
 
     videoUrl: "https://youtube.com/shorts/Opq0b561Pu8?feature=share",
 
-    // TODO: paste your Google Form / Tally public link
-    waitlistUrl: "",
+    waitlistUrl: "https://tally.so/r/J9OXpz",
 
-    // Optional: paste your embed URL (Google Forms: ...viewform?embedded=true)
-    waitlistEmbedUrl: "",
+    waitlistEmbedUrl: "https://tally.so/r/J9OXpz?hideTitle=1&transparentBackground=1",
   };
 
   return <PerchedLanding {...props} />;
