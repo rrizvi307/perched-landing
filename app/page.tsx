@@ -1,3 +1,5 @@
+"use client";
+
 // app/page.tsx
 type LandingProps = {
   brandName: string;
