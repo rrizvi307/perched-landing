@@ -102,7 +102,7 @@ function PerchedLanding({
         <header className="header">
           <div className="container headerInner">
             <a className="brand" href="#" aria-label={brandName}>
-              <span className="mark" aria-hidden="true" />
+              <img className="mark" src="/perched-mark.png" alt="" aria-hidden="true" />
               <span className="brandText">{brandName}</span>
             </a>
 
@@ -128,7 +128,6 @@ function PerchedLanding({
           <section className="hero">
             <div className="container heroGrid">
               <div className="heroText">
-                <p className="kicker">INK · PAPER · MOSS</p>
                 <h1 className="h1">{headline}</h1>
                 <p className="subhead">{subhead}</p>
 
@@ -155,7 +154,7 @@ function PerchedLanding({
                     {video.kind === "none" ? (
                       <div className="placeholder">
                         <p className="placeholderTitle">Demo video</p>
-                        <p className="placeholderSub">Paste your `videoUrl` in `app/page.tsx`</p>
+                        <p className="placeholderSub">Demo video coming soon.</p>
                       </div>
                     ) : video.kind === "video" ? (
                       // eslint-disable-next-line jsx-a11y/media-has-caption
@@ -181,15 +180,13 @@ function PerchedLanding({
           <section id="demo" className="section">
             <div className="container">
               <div className="sectionHeader">
-                <h2 className="h2">A product‑style demo, not a vlog.</h2>
-                <p className="p">
-                  One action per shot. Smooth gestures. Clean overlays. Holds at the end so it registers.
-                </p>
+                <h2 className="h2">See Perched in action.</h2>
+                <p className="p">Explore hot zones, tap in to detect, and share a clean weekly recap.</p>
               </div>
 
               <div className="card demoCard">
                 <div className="demoLeft">
-                  <p className="label">DEMO BEATS</p>
+                  <p className="label">HIGHLIGHTS</p>
                   <ul className="list">
                     <li>Explore: hot zones + vibe toggle</li>
                     <li>Feed: friends live now + quick scroll</li>
@@ -198,10 +195,8 @@ function PerchedLanding({
                   </ul>
                 </div>
                 <div className="demoRight">
-                  <p className="label">TIP</p>
-                  <p className="p">
-                    Record at 60fps and keep each clip 2–4 seconds. Add gentle easing on zooms/pans.
-                  </p>
+                  <p className="label">BUILT FOR WORK</p>
+                  <p className="p">A faster decision engine than endless reviews: vibe, outlets, noise, and “who's here now”.</p>
                 </div>
               </div>
             </div>
@@ -271,7 +266,7 @@ function PerchedLanding({
                         .
                       </>
                     ) : (
-                      "Paste your waitlist URL in `app/page.tsx`."
+                      "Join the waitlist to get early access."
                     )}
                   </p>
                   <div className="ctaRow">
@@ -289,8 +284,8 @@ function PerchedLanding({
                     <iframe className="form" src={waitlistEmbedUrl} title="Waitlist form" />
                   ) : (
                     <div className="placeholder formPlaceholder">
-                      <p className="placeholderTitle">Embed your form</p>
-                      <p className="placeholderSub">Paste a Google Forms/Tally embed URL into `waitlistEmbedUrl`.</p>
+                      <p className="placeholderTitle">Waitlist</p>
+                      <p className="placeholderSub">Form embed coming soon.</p>
                     </div>
                   )}
                 </div>
@@ -403,11 +398,13 @@ function PerchedLanding({
           letter-spacing: -0.3px;
         }
         .mark {
-          width: 14px;
-          height: 14px;
-          border-radius: 6px;
-          background: linear-gradient(135deg, var(--moss), #3a8a74);
-          box-shadow: 0 0 0 4px rgba(47, 111, 94, 0.12);
+          width: 24px;
+          height: 24px;
+          border-radius: 12px;
+          border: 1px solid rgba(231, 232, 236, 0.95);
+          background: var(--paper);
+          object-fit: cover;
+          box-shadow: 0 0 0 4px rgba(47, 111, 94, 0.1);
         }
         .brandText {
           font-size: 15px;
@@ -435,13 +432,6 @@ function PerchedLanding({
           grid-template-columns: 1.05fr 0.95fr;
           gap: 28px;
           align-items: center;
-        }
-        .kicker {
-          font-size: 11px;
-          letter-spacing: 1.6px;
-          font-weight: 700;
-          color: rgba(14, 15, 18, 0.6);
-          margin: 0 0 10px;
         }
         .h1 {
           margin: 0;
