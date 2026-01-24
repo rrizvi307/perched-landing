@@ -147,7 +147,7 @@ function PerchedLanding({
                 </div>
               </div>
 
-              <div className="heroMedia">
+              <div className="heroMedia anchor" id="demo">
                 <div className="device">
                   <div className="deviceTop" />
                   <div className="deviceScreen" aria-label="Perched demo preview">
@@ -177,7 +177,7 @@ function PerchedLanding({
             </div>
           </section>
 
-          <section id="demo" className="section">
+          <section id="highlights" className="section">
             <div className="container">
               <div className="sectionHeader">
                 <h2 className="h2">See Perched in action.</h2>
@@ -374,6 +374,9 @@ function PerchedLanding({
           margin: 0 auto;
           padding: 0 20px;
         }
+        .anchor {
+          scroll-margin-top: 80px;
+        }
 
         .header {
           position: sticky;
@@ -548,6 +551,7 @@ function PerchedLanding({
 
         .section {
           padding: 56px 0;
+          scroll-margin-top: 80px;
         }
         .sectionHeader {
           display: flex;
