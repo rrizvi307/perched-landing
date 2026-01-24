@@ -25,6 +25,8 @@ function toYouTubeEmbed(url: string): string | null {
       const id = u.searchParams.get("v");
       if (id) return `https://www.youtube.com/embed/${id}`;
       const parts = u.pathname.split("/").filter(Boolean);
+      const shortsIndex = parts.indexOf("shorts");
+      if (shortsIndex >= 0 && parts[shortsIndex + 1]) return `https://www.youtube.com/embed/${parts[shortsIndex + 1]}`;
       const embedIndex = parts.indexOf("embed");
       if (embedIndex >= 0 && parts[embedIndex + 1]) return `https://www.youtube.com/embed/${parts[embedIndex + 1]}`;
     }
@@ -69,8 +71,7 @@ export default function Page() {
     secondaryCtaLabel: "Watch the demo",
     secondaryCtaHref: "#demo",
 
-    // TODO: paste your YouTube link (watch URL is fine)
-    videoUrl: "",
+    videoUrl: "https://youtube.com/shorts/Opq0b561Pu8?feature=share",
 
     // TODO: paste your Google Form / Tally public link
     waitlistUrl: "",
