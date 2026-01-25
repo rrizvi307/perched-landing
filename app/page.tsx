@@ -110,11 +110,11 @@ function PerchedLanding({
               <a className="navLink" href="#demo">
                 Demo
               </a>
-              <a className="navLink" href="#features">
-                Features
-              </a>
               <a className="navLink" href="#waitlist">
                 Waitlist
+              </a>
+              <a className="navLink" href="#features">
+                Features
               </a>
             </nav>
 
@@ -187,6 +187,53 @@ function PerchedLanding({
             </div>
           </section>
 
+          <section id="waitlist" className="section">
+            <div className="container">
+              <div className="sectionHeader">
+                <h2 className="h2">Join the founding crew.</h2>
+                <p className="p">Get early access, help shape the product, and seed the first wave of spots.</p>
+              </div>
+
+              <div className="card waitlistCard">
+                <div className="waitlistLeft">
+                  <p className="label">WAITLIST</p>
+                  <p className="p">
+                    {waitlistUrl ? (
+                      <>
+                        Prefer a quick link?{" "}
+                        <a className="link" href={waitlistUrl} target="_blank" rel="noreferrer">
+                          Open the form
+                        </a>
+                        .
+                      </>
+                    ) : (
+                      "Join the waitlist to get early access."
+                    )}
+                  </p>
+                  <div className="ctaRow">
+                    <a className="btn btnPrimary" href={waitlistUrl || "#"} target={waitlistUrl ? "_blank" : undefined} rel="noreferrer">
+                      Join waitlist
+                    </a>
+                    <a className="btn btnGhost" href="mailto:perchedappteam@gmail.com">
+                      Contact
+                    </a>
+                  </div>
+                </div>
+
+                <div className="waitlistRight">
+                  {waitlistEmbedUrl ? (
+                    <iframe className="form" src={waitlistEmbedUrl} title="Waitlist form" />
+                  ) : (
+                    <div className="placeholder formPlaceholder">
+                      <p className="placeholderTitle">Waitlist</p>
+                      <p className="placeholderSub">Form embed coming soon.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section id="highlights" className="section">
             <div className="container">
               <div className="sectionHeader">
@@ -251,53 +298,6 @@ function PerchedLanding({
                     <span className="chip">Save to Photos</span>
                     <span className="chip">Share</span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="waitlist" className="section">
-            <div className="container">
-              <div className="sectionHeader">
-                <h2 className="h2">Join the founding crew.</h2>
-                <p className="p">Get early access, help shape the product, and seed the first wave of spots.</p>
-              </div>
-
-              <div className="card waitlistCard">
-                <div className="waitlistLeft">
-                  <p className="label">WAITLIST</p>
-                  <p className="p">
-                    {waitlistUrl ? (
-                      <>
-                        Prefer a quick link?{" "}
-                        <a className="link" href={waitlistUrl} target="_blank" rel="noreferrer">
-                          Open the form
-                        </a>
-                        .
-                      </>
-                    ) : (
-                      "Join the waitlist to get early access."
-                    )}
-                  </p>
-                  <div className="ctaRow">
-                    <a className="btn btnPrimary" href={waitlistUrl || "#"} target={waitlistUrl ? "_blank" : undefined} rel="noreferrer">
-                      Join waitlist
-                    </a>
-                    <a className="btn btnGhost" href="mailto:perchedappteam@gmail.com">
-                      Contact
-                    </a>
-                  </div>
-                </div>
-
-                <div className="waitlistRight">
-                  {waitlistEmbedUrl ? (
-                    <iframe className="form" src={waitlistEmbedUrl} title="Waitlist form" />
-                  ) : (
-                    <div className="placeholder formPlaceholder">
-                      <p className="placeholderTitle">Waitlist</p>
-                      <p className="placeholderSub">Form embed coming soon.</p>
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
