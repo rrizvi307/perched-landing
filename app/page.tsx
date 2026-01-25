@@ -67,8 +67,7 @@ export default function Page() {
   const props: LandingProps = {
     brandName: "Perched",
     headline: "Stop guessing where to work.",
-    subhead:
-      "Perched helps you find the right spot in minutes — by vibe, outlets, noise, and what your friends are doing right now.",
+    subhead: "Find the right work spot in minutes.",
     primaryCtaLabel: "Join the waitlist",
     primaryCtaHref: waitlistUrl,
     secondaryCtaLabel: "Watch the demo",
@@ -146,11 +145,19 @@ function PerchedLanding({
                   </a>
                 </div>
 
-                <div className="miniRow">
-                  <div className="miniPill">Hot zones by vibe</div>
-                  <div className="miniPill">Tap in → detect</div>
-                  <div className="miniPill">Shareable recap</div>
-                </div>
+                <details className="heroDetails">
+                  <summary>Learn more</summary>
+                  <div className="heroDetailsBody">
+                    <p className="detailsText">
+                      Perched helps you find the right spot in minutes — by vibe, outlets, noise, and what your friends are doing right now.
+                    </p>
+                    <div className="miniRow">
+                      <div className="miniPill">Hot zones by vibe</div>
+                      <div className="miniPill">Tap in → detect</div>
+                      <div className="miniPill">Shareable recap</div>
+                    </div>
+                  </div>
+                </details>
               </div>
 
               <div className="heroMedia anchor" id="demo">
@@ -176,9 +183,6 @@ function PerchedLanding({
                     )}
                   </div>
                 </div>
-                <p className="caption">
-                  “Quiet cafe with outlets” → Perched surfaces the right spots fast.
-                </p>
               </div>
             </div>
           </section>
@@ -461,6 +465,46 @@ function PerchedLanding({
           gap: 10px;
           flex-wrap: wrap;
         }
+        .heroDetails {
+          margin-top: 14px;
+          max-width: 540px;
+          border-radius: 18px;
+          border: 1px solid rgba(231, 232, 236, 0.95);
+          background: rgba(255, 255, 255, 0.62);
+          padding: 12px 14px;
+        }
+        .heroDetails summary {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 13px;
+          font-weight: 900;
+          letter-spacing: -0.2px;
+          color: rgba(14, 15, 18, 0.8);
+        }
+        .heroDetails summary::-webkit-details-marker {
+          display: none;
+        }
+        .heroDetails summary::after {
+          content: "⌄";
+          font-size: 14px;
+          line-height: 1;
+          color: rgba(14, 15, 18, 0.55);
+          transform: translateY(-1px);
+          transition: transform 140ms ease;
+        }
+        .heroDetails[open] summary::after {
+          transform: rotate(180deg);
+        }
+        .heroDetailsBody {
+          margin-top: 10px;
+        }
+        .detailsText {
+          margin: 0;
+          font-size: 14px;
+          line-height: 20px;
+          color: rgba(14, 15, 18, 0.72);
+        }
         .btn {
           display: inline-flex;
           align-items: center;
@@ -491,7 +535,7 @@ function PerchedLanding({
         }
 
         .miniRow {
-          margin-top: 18px;
+          margin-top: 12px;
           display: flex;
           flex-wrap: wrap;
           gap: 8px;
@@ -504,12 +548,6 @@ function PerchedLanding({
           background: rgba(255, 255, 255, 0.7);
           padding: 8px 10px;
           border-radius: 999px;
-        }
-
-        .heroMedia .caption {
-          margin: 10px 0 0;
-          font-size: 13px;
-          color: rgba(14, 15, 18, 0.6);
         }
         .device {
           border-radius: 30px;
