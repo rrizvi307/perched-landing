@@ -61,21 +61,22 @@ function resolveVideo(videoUrl?: string): { kind: "none" } | { kind: "video"; sr
 }
 
 export default function Page() {
+  const waitlistUrl = "https://tally.so/r/J9OXpz";
+  const videoUrl = "https://youtube.com/shorts/Opq0b561Pu8?feature=share";
+
   const props: LandingProps = {
     brandName: "Perched",
     headline: "Stop guessing where to work.",
     subhead:
       "Perched helps you find the right spot in minutes — by vibe, outlets, noise, and what your friends are doing right now.",
     primaryCtaLabel: "Join the waitlist",
-    primaryCtaHref: "#waitlist",
+    primaryCtaHref: waitlistUrl,
     secondaryCtaLabel: "Watch the demo",
     secondaryCtaHref: "#demo",
 
-    videoUrl: "https://youtube.com/shorts/Opq0b561Pu8?feature=share",
-
-    waitlistUrl: "https://tally.so/r/J9OXpz",
-
-    waitlistEmbedUrl: "https://tally.so/r/J9OXpz?hideTitle=1&transparentBackground=1",
+    videoUrl,
+    waitlistUrl,
+    waitlistEmbedUrl: `${waitlistUrl}?hideTitle=1&transparentBackground=1`,
   };
 
   return <PerchedLanding {...props} />;
@@ -94,6 +95,7 @@ function PerchedLanding({
   waitlistEmbedUrl,
 }: LandingProps) {
   const video = resolveVideo(videoUrl);
+  const primaryCtaIsExternal = /^https?:\/\//.test(primaryCtaHref);
 
   return (
     <>
@@ -131,7 +133,12 @@ function PerchedLanding({
                 <p className="subhead">{subhead}</p>
 
                 <div className="ctaRow">
-                  <a className="btn btnPrimary" href={primaryCtaHref}>
+                  <a
+                    className="btn btnPrimary"
+                    href={primaryCtaHref}
+                    target={primaryCtaIsExternal ? "_blank" : undefined}
+                    rel={primaryCtaIsExternal ? "noreferrer" : undefined}
+                  >
                     {primaryCtaLabel}
                   </a>
                   <a className="btn btnGhost" href={secondaryCtaHref}>
