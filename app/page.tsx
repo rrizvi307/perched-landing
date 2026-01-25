@@ -145,19 +145,14 @@ function PerchedLanding({
                   </a>
                 </div>
 
-                <details className="heroDetails">
-                  <summary>Learn more</summary>
-                  <div className="heroDetailsBody">
-                    <p className="detailsText">
-                      Perched helps you find the right spot in minutes — by vibe, outlets, noise, and what your friends are doing right now.
-                    </p>
-                    <div className="miniRow">
-                      <div className="miniPill">Hot zones by vibe</div>
-                      <div className="miniPill">Tap in → detect</div>
-                      <div className="miniPill">Shareable recap</div>
-                    </div>
+                <div className="heroBubble">
+                  <p className="heroBubbleText">Vibe, outlets, noise — plus who’s here now.</p>
+                  <div className="miniRow">
+                    <div className="miniPill">Hot zones by vibe</div>
+                    <div className="miniPill">Tap in → detect</div>
+                    <div className="miniPill">Shareable recap</div>
                   </div>
-                </details>
+                </div>
               </div>
 
               <div className="heroMedia anchor" id="demo">
@@ -234,11 +229,11 @@ function PerchedLanding({
             </div>
           </section>
 
-          <section id="highlights" className="section">
+          <section id="features" className="section">
             <div className="container">
               <div className="sectionHeader">
                 <h2 className="h2">See Perched in action.</h2>
-                <p className="p">Explore hot zones, tap in to detect, and share a clean weekly recap.</p>
+                <p className="p">A fast decision engine for the “where should I work?” moment.</p>
               </div>
 
               <div className="card demoCard">
@@ -255,15 +250,6 @@ function PerchedLanding({
                   <p className="label">BUILT FOR WORK</p>
                   <p className="p">A faster decision engine than endless reviews: vibe, outlets, noise, and “who's here now”.</p>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          <section id="features" className="section">
-            <div className="container">
-              <div className="sectionHeader">
-                <h2 className="h2">Built for the “where should I work?” moment.</h2>
-                <p className="p">Not a giant directory — a fast decision engine.</p>
               </div>
 
               <div className="grid3">
@@ -465,7 +451,7 @@ function PerchedLanding({
           gap: 10px;
           flex-wrap: wrap;
         }
-        .heroDetails {
+        .heroBubble {
           margin-top: 14px;
           max-width: 540px;
           border-radius: 18px;
@@ -473,37 +459,13 @@ function PerchedLanding({
           background: rgba(255, 255, 255, 0.62);
           padding: 12px 14px;
         }
-        .heroDetails summary {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          font-size: 13px;
-          font-weight: 900;
-          letter-spacing: -0.2px;
-          color: rgba(14, 15, 18, 0.8);
-        }
-        .heroDetails summary::-webkit-details-marker {
-          display: none;
-        }
-        .heroDetails summary::after {
-          content: "⌄";
-          font-size: 14px;
-          line-height: 1;
-          color: rgba(14, 15, 18, 0.55);
-          transform: translateY(-1px);
-          transition: transform 140ms ease;
-        }
-        .heroDetails[open] summary::after {
-          transform: rotate(180deg);
-        }
-        .heroDetailsBody {
-          margin-top: 10px;
-        }
-        .detailsText {
+        .heroBubbleText {
           margin: 0;
           font-size: 14px;
           line-height: 20px;
           color: rgba(14, 15, 18, 0.72);
+          font-weight: 800;
+          letter-spacing: -0.2px;
         }
         .btn {
           display: inline-flex;
@@ -650,7 +612,7 @@ function PerchedLanding({
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 14px;
-          margin-top: 14px;
+          margin-top: 18px;
         }
         .chips {
           margin-top: 12px;
