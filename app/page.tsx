@@ -62,7 +62,7 @@ function resolveVideo(videoUrl?: string): { kind: "none" } | { kind: "video"; sr
 
 export default function Page() {
   const waitlistUrl = "https://tally.so/r/J9OXpz";
-  const videoUrl = "https://youtube.com/shorts/Opq0b561Pu8?feature=share";
+  const videoUrl = "https://youtube.com/shorts/1_BXGl4nvM8?si=qffXDiYx1JiOWwFT";
 
   const props: LandingProps = {
     brandName: "Perched",
@@ -146,7 +146,7 @@ function PerchedLanding({
                 </div>
 
                 <div className="heroBubble">
-                  <p className="heroBubbleText">Vibe, outlets, noise — plus who’s here now.</p>
+                  <p className="heroBubbleText">Vibe, outlets, noise, plus who’s here now.</p>
                   <div className="miniRow">
                     <div className="miniPill">Hot zones by vibe</div>
                     <div className="miniPill">Tap in → detect</div>
@@ -256,20 +256,20 @@ function PerchedLanding({
                 <div className="card feature">
                   <p className="label">EXPLORE</p>
                   <h3 className="h3">Hot zones by vibe</h3>
-                  <p className="p">See what’s working right now — quiet, social, late-night, outlets, Wi‑Fi.</p>
+                  <p className="p">See what’s working right now: quiet, social, late night, outlets, WiFi.</p>
                   <div className="chips">
                     <span className="chip">Quiet</span>
                     <span className="chip">Outlets</span>
-                    <span className="chip">Wi‑Fi</span>
+                    <span className="chip">WiFi</span>
                   </div>
                 </div>
 
                 <div className="card feature">
                   <p className="label">TAP IN</p>
                   <h3 className="h3">Detect → post in seconds</h3>
-                  <p className="p">Snap a photo, auto-detect the spot, add 1–3 tags, and you’re done.</p>
+                  <p className="p">Snap a photo, auto detect the spot, add 1 to 3 tags, and you’re done.</p>
                   <div className="chips">
-                    <span className="chip">Auto‑detect</span>
+                    <span className="chip">Auto detect</span>
                     <span className="chip">Tags</span>
                     <span className="chip">Visibility</span>
                   </div>
@@ -278,7 +278,7 @@ function PerchedLanding({
                 <div className="card feature">
                   <p className="label">RECAP</p>
                   <h3 className="h3">Shareable weekly story</h3>
-                  <p className="p">A clean recap card that matches the Perched aesthetic — ready for socials.</p>
+                  <p className="p">A clean recap card that matches the Perched aesthetic, ready for socials.</p>
                   <div className="chips">
                     <span className="chip">Story card</span>
                     <span className="chip">Save to Photos</span>
@@ -306,7 +306,7 @@ function PerchedLanding({
                 </details>
                 <details className="faqItem">
                   <summary>How does “vibe” work?</summary>
-                  <p>Vibe is powered by real check-ins + tags (quiet, outlets, Wi‑Fi, late-night) — not generic reviews.</p>
+                  <p>Vibe is powered by real checkins and tags (quiet, outlets, WiFi, late night), not generic reviews.</p>
                 </details>
               </div>
             </div>
