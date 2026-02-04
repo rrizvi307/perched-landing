@@ -57,6 +57,7 @@ export const FEATURES = {
       stat: "+40% daily engagement with gamification",
       tags: ["Habit Building", "Motivation", "Rewards"],
       highlight: true, // Most important feature
+      comingSoon: false,
     },
     {
       id: "detection",
@@ -68,6 +69,7 @@ export const FEATURES = {
         "Tag the vibe: Quiet, WiFi, Outlets, Coworking, Late-night. No endless reviews. Real vibes from real check-ins.",
       tags: ["AI-Powered", "Fast", "Accurate"],
       highlight: false,
+      comingSoon: false,
     },
     {
       id: "social",
@@ -79,6 +81,7 @@ export const FEATURES = {
         "React with 🔥 ☕ 📚 🎉 ❤️ 👍 to show love. Your friends are 2 blocks away. Meet up spontaneously.",
       tags: ["Real-time", "Community", "FOMO"],
       highlight: false,
+      comingSoon: false,
     },
     {
       id: "insights",
@@ -90,6 +93,7 @@ export const FEATURES = {
         "See your check-in history and streak milestones. Discover your most productive times and favorite locations.",
       tags: ["Analytics", "Patterns", "Growth"],
       highlight: false,
+      comingSoon: false,
     },
     {
       id: "leaderboards",
@@ -113,6 +117,7 @@ export const FEATURES = {
         "Show off your week's adventures with aesthetic recap cards. One tap to share your productivity journey.",
       tags: ["Shareable", "Aesthetic", "Stories"],
       highlight: false,
+      comingSoon: false,
     },
   ],
 } as const;
