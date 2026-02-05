@@ -1,38 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { SEO, SITE_CONFIG } from "./lib/constants";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://perched.app"),
-  title: "Perched",
-  description: "Stop guessing where to work. Find the right spot by vibe, outlets, noise, and who’s here now.",
+  metadataBase: new URL(SITE_CONFIG.url),
+  title: SEO.title,
+  description: SEO.description,
+  keywords: [...SEO.keywords],
   icons: {
     icon: [{ url: "/icon.png" }],
     apple: [{ url: "/apple-icon.png" }],
   },
   openGraph: {
-    title: "Perched",
-    description: "Stop guessing where to work. Find the right spot by vibe, outlets, noise, and who’s here now.",
-    url: "https://perched.app",
-    siteName: "Perched",
+    title: SEO.title,
+    description: SEO.description,
+    url: SITE_CONFIG.url,
+    siteName: SITE_CONFIG.name,
     type: "website",
-    images: [{ url: "/perched-mark.png", width: 512, height: 512, alt: "Perched" }],
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Perched - Find Your Perfect Study Spot & Squad",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Perched",
-    description: "Stop guessing where to work. Find the right spot by vibe, outlets, noise, and who’s here now.",
-    images: ["/perched-mark.png"],
+    card: "summary_large_image",
+    title: SEO.title,
+    description: SEO.description,
+    images: ["/og-image.png"],
   },
 };
 
@@ -43,11 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

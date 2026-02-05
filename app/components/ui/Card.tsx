@@ -5,6 +5,7 @@ interface CardProps {
   className?: string;
   hover?: boolean;
   gradient?: boolean;
+  glass?: boolean;
 }
 
 export function Card({
@@ -12,16 +13,21 @@ export function Card({
   className = "",
   hover = false,
   gradient = false,
+  glass = false,
 }: CardProps) {
   const baseStyles = "rounded-2xl p-6 transition-all duration-300";
 
   const hoverStyles = hover
-    ? "hover:scale-105 hover:shadow-2xl cursor-pointer"
+    ? "card-hover cursor-pointer"
     : "";
 
-  const backgroundStyles = gradient
-    ? "bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-100"
-    : "bg-white border-2 border-border";
+  let backgroundStyles = "bg-white border border-border";
+
+  if (gradient) {
+    backgroundStyles = "bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100";
+  } else if (glass) {
+    backgroundStyles = "glass-card";
+  }
 
   return (
     <div className={`${baseStyles} ${backgroundStyles} ${hoverStyles} ${className}`}>

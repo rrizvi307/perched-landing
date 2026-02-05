@@ -1,6 +1,6 @@
 import React from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "ghost";
+export type ButtonVariant = "primary" | "secondary" | "ghost" | "gradient";
 export type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,11 +23,13 @@ export function Button({
 
   const variantStyles = {
     primary:
-      "bg-purple text-white hover:bg-purple-600 active:bg-purple-700 shadow-lg hover:shadow-xl",
+      "bg-purple text-white hover:bg-purple-600 active:bg-purple-700 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]",
     secondary:
-      "bg-white text-purple border-2 border-purple hover:bg-purple-50 active:bg-purple-100",
+      "bg-white text-purple border-2 border-purple hover:bg-purple-50 active:bg-purple-100 hover:scale-[1.02] active:scale-[0.98]",
     ghost:
-      "bg-transparent text-ink border-2 border-border hover:bg-paper active:bg-border",
+      "bg-transparent text-ink border-2 border-border hover:bg-paper active:bg-border hover:scale-[1.02] active:scale-[0.98]",
+    gradient:
+      "btn-gradient text-white shadow-lg hover:shadow-glow-pink",
   };
 
   const sizeStyles = {
