@@ -1,63 +1,75 @@
 "use client";
 
 import React from "react";
-import { Card } from "../ui/Card";
-import { Badge } from "../ui/Badge";
-import { FEATURES } from "@/lib/constants";
+import { FEATURES, VIBE_TAGS } from "@/lib/constants";
 
 export function FeatureGrid() {
   return (
-    <section
-      id="features"
-      className="py-32 lg:py-40 px-6 bg-white"
-    >
+    <section id="features" className="py-32 lg:py-40 px-6 bg-paper">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-center mb-20 lg:mb-32 space-y-4">
+        <div className="text-center mb-16 lg:mb-24 space-y-4">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink">
-            Everything you need
+            {FEATURES.headline}
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto">
-            Simple features that keep you motivated
+            {FEATURES.subheadline}
           </p>
         </div>
 
-        {/* Feature grid - only show top 3 features prominently */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-20">
-          {FEATURES.features.slice(0, 3).map((feature) => (
-            <div key={feature.id} className="text-center space-y-6">
-              {/* Icon */}
-              <div className="inline-flex items-center justify-center w-20 h-20 text-5xl">
-                <span>{feature.emoji}</span>
-              </div>
-
-              {/* Title and description */}
-              <div className="space-y-3">
-                <h3 className="text-2xl font-bold text-ink">
+        {/* Main features - highlighted */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
+          {FEATURES.features
+            .filter((f) => f.highlight)
+            .map((feature) => (
+              <div
+                key={feature.id}
+                className="bg-white rounded-2xl p-8 border border-border card-hover text-center"
+              >
+                <div className="text-5xl mb-6">{feature.emoji}</div>
+                <h3 className="text-xl font-bold text-ink mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-base text-muted leading-relaxed">
-                  {feature.description}
-                </p>
+                <p className="text-muted">{feature.description}</p>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
-        {/* Additional features - simple list */}
-        <div className="max-w-2xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-            {FEATURES.features.slice(3).map((feature) => (
-              <div key={feature.id} className="space-y-2">
+        {/* Secondary features */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-20">
+          {FEATURES.features
+            .filter((f) => !f.highlight)
+            .map((feature) => (
+              <div
+                key={feature.id}
+                className="flex items-center gap-4 p-4 rounded-xl bg-white border border-border hover:border-purple-200 transition-colors"
+              >
                 <div className="text-3xl">{feature.emoji}</div>
-                <h4 className="text-sm font-semibold text-ink">
-                  {feature.title}
-                </h4>
-                {feature.comingSoon && (
-                  <Badge variant="coming-soon" className="text-xs">
-                    Coming Soon
-                  </Badge>
-                )}
+                <div>
+                  <h4 className="font-semibold text-ink">{feature.title}</h4>
+                  <p className="text-sm text-muted">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+        </div>
+
+        {/* Vibe tags section */}
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 lg:p-12 border border-purple-100">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl lg:text-3xl font-bold text-ink mb-2">
+              {VIBE_TAGS.headline}
+            </h3>
+            <p className="text-muted">{VIBE_TAGS.subheadline}</p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {VIBE_TAGS.tags.map((tag, index) => (
+              <div
+                key={index}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-purple-100 hover:border-purple-300 transition-colors cursor-pointer hover-scale"
+              >
+                <span>{tag.emoji}</span>
+                <span className="font-medium text-ink">{tag.name}</span>
               </div>
             ))}
           </div>
