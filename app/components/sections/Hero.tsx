@@ -26,23 +26,24 @@ export function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 lg:py-40">
         {/* Hero text */}
         <div className="text-center space-y-8 mb-16 lg:mb-24 animate-slide-up">
-          {/* Badge */}
+          {/* Pre-launch badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-purple-100 shadow-sm">
-            <span className="animate-flame text-lg">🔥</span>
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+            </span>
             <span className="text-sm font-medium text-purple-600">
-              Now available on iOS
+              Launching February 2025
             </span>
           </div>
 
           {/* Headline */}
           <div className="space-y-4 max-w-4xl mx-auto">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[1.1]">
-              <span className="text-ink">{HERO.headline}</span>
-              <br />
-              <span className="gradient-primary-text">{HERO.subheadline}</span>
+              <span className="gradient-primary-text">{HERO.headline}</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted max-w-2xl mx-auto font-normal">
-              {HERO.description}
+              {HERO.subheadline}
             </p>
           </div>
 
@@ -56,9 +57,14 @@ export function Hero() {
               size="lg"
               href={DEMO_MODE.url}
             >
-              {HERO.tertiaryCTA}
+              {HERO.secondaryCTA}
             </Button>
           </div>
+
+          {/* Launch note */}
+          <p className="text-sm text-muted">
+            {HERO.launchNote}
+          </p>
         </div>
 
         {/* Hero features grid */}
@@ -69,7 +75,7 @@ export function Hero() {
               className="glass-card rounded-2xl p-6 text-center animate-slide-up hover-lift"
             >
               <div className="mb-4">
-                {feature.icon === "campus" && (
+                {feature.icon === "wifi" && (
                   <div className="w-14 h-14 mx-auto rounded-2xl gradient-primary flex items-center justify-center">
                     <svg
                       className="w-7 h-7 text-white"
@@ -81,22 +87,12 @@ export function Hero() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M12 14l9-5-9-5-9 5 9 5z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                        d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"
                       />
                     </svg>
                   </div>
                 )}
-                {feature.icon === "camera" && (
+                {feature.icon === "users" && (
                   <div className="w-14 h-14 mx-auto rounded-2xl gradient-primary flex items-center justify-center">
                     <svg
                       className="w-7 h-7 text-white"
@@ -108,12 +104,7 @@ export function Hero() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
                       />
                     </svg>
                   </div>

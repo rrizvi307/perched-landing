@@ -4,60 +4,103 @@ export const SITE_CONFIG = {
   name: "Perched",
   url: "https://perched.app",
   description:
-    "Discover coffee shops, libraries, and coworking spaces where your friends and classmates are working. Build streaks, unlock achievements, and connect with your campus community.",
+    "Find the best coffee shops, libraries, and workspaces near you with real-time WiFi, noise, and busyness data — all from verified students and remote workers.",
   email: "hello@perched.app",
   demoUrl: "https://demo.perched.app",
+  launchDate: "February 2025",
 } as const;
 
 export const HERO = {
-  headline: "Stop Working Alone.",
-  subheadline: "Find Your Perfect Spot & Squad.",
+  headline: "Find Your Perfect Spot",
+  subheadline: "Real-time WiFi, noise, and busyness data from verified students and remote workers.",
   description:
-    "Discover coffee shops, libraries, and coworking spaces—then see who from your campus is there right now.",
-  primaryCTA: "Download for iOS",
-  secondaryCTA: "Watch Demo",
-  tertiaryCTA: "Try Interactive Demo",
+    "Stop wasting time at bad spots. See WiFi quality, noise levels, and how busy places are before you arrive.",
+  primaryCTA: "Join the Waitlist",
+  secondaryCTA: "Try Interactive Demo",
+  launchNote: "Launching on iOS in February 2025. Be first to know.",
   demoVideoUrl: "https://youtube.com/shorts/1_BXGl4nvM8?si=qffXDiYx1JiOWwFT",
   heroFeatures: [
     {
-      icon: "campus",
-      title: "Campus Connect",
-      description: "University verification and classmate discovery",
+      icon: "wifi",
+      title: "Real-Time Metrics",
+      description: "WiFi quality, noise levels, and busyness—before you arrive",
     },
     {
-      icon: "camera",
-      title: "Smart Check-ins",
-      description: "Photo-based location detection with vibe tagging",
+      icon: "users",
+      title: "Live Presence",
+      description: "See who's at a spot right now with 'here now' status",
     },
     {
       icon: "flame",
-      title: "Gamification",
-      description: "Daily streaks and leaderboards",
+      title: "Build Your Streak",
+      description: "Daily check-ins like Duolingo with badges and leaderboards",
+    },
+  ],
+} as const;
+
+// New section: Problem Statement
+export const PROBLEM = {
+  headline: "Tired of Wasting Time at Bad Spots?",
+  painPoints: [
+    {
+      emoji: "🔌",
+      title: "No outlets when you arrive",
+    },
+    {
+      emoji: "📶",
+      title: "WiFi too slow to get work done",
+    },
+    {
+      emoji: "🔊",
+      title: "Too loud to focus",
+    },
+  ],
+} as const;
+
+// New section: See Before You Go (Real-time Intelligence)
+export const REAL_TIME = {
+  headline: "See Before You Go",
+  subheadline: "Perched shows you what matters most",
+  features: [
+    {
+      icon: "wifi",
+      title: "Real-Time Metrics",
+      description: "Check WiFi quality, noise levels, and busyness before you arrive",
+    },
+    {
+      icon: "users",
+      title: "Live Presence",
+      description: "See who's at a spot right now with 'here now' status",
+    },
+    {
+      icon: "clock",
+      title: "Popular Hours",
+      description: "Know when spots are busiest throughout the day",
     },
   ],
 } as const;
 
 export const HOW_IT_WORKS = {
-  headline: "How It Works",
-  subheadline: "Join your campus community in three simple steps",
+  headline: "Find Better Spots in 3 Steps",
+  subheadline: "It takes 10 seconds to help your community",
   steps: [
     {
       number: 1,
-      title: "Join Your Campus",
-      description: "Verify with your .edu email to connect with classmates",
-      icon: "university",
+      title: "Explore",
+      description: "Browse spots on a map with real-time WiFi, noise, and busyness metrics",
+      icon: "map",
     },
     {
       number: 2,
-      title: "Check In & Tag Vibes",
-      description: "Snap a photo, add vibe tags, and share your spot",
+      title: "Check In",
+      description: "Rate WiFi, noise, and busyness when you arrive (takes 10 seconds)",
       icon: "camera",
     },
     {
       number: 3,
-      title: "Build Your Network",
-      description: "Send friend requests, build streaks, and level up together",
-      icon: "network",
+      title: "Share",
+      description: "Help others discover great spots and build your streak",
+      icon: "share",
     },
   ],
 } as const;
@@ -147,70 +190,31 @@ export const GAMIFICATION = {
   reactions: ["🔥", "☕", "📚", "🎉", "❤️", "👍"],
 } as const;
 
-export const CAMPUS_INTEGRATION = {
-  headline: "Your Campus, Connected",
-  subheadline: "Join thousands of students already on Perched",
-  features: [
-    {
-      icon: "sync",
-      title: "University Sync",
-      description: "Automatically connect with your campus community",
-    },
-    {
-      icon: "badge",
-      title: "Campus Badges",
-      description: "Earn exclusive badges for your school",
-    },
-    {
-      icon: "verify",
-      title: "Email Verification",
-      description: "Secure .edu verification keeps it real",
-    },
-    {
-      icon: "connect",
-      title: "Smart Connections",
-      description: "Get suggested friends from your school",
-    },
+// Updated: Campus Launch section with transparency
+export const CAMPUS_LAUNCH = {
+  headline: "Rolling Out Campus by Campus",
+  subheadline: "Starting at top universities this February",
+  description: "We're launching first at select campuses to build the best experience. Want us at your campus? Join the waitlist and we'll notify you when we arrive.",
+  campuses: [
+    "Rice University",
+    "UT Austin",
+    "UCLA",
+    "Stanford",
+    "MIT",
   ],
+  cta: "Request Your Campus",
 } as const;
 
 export const VIBE_TAGS = {
-  headline: "Find Your Perfect Vibe",
-  subheadline: "Filter spots by what matters to you",
+  headline: "Filter by What Matters",
+  subheadline: "Find exactly what you need",
   tags: [
-    { name: "WiFi", emoji: "📶" },
+    { name: "Fast WiFi", emoji: "📶" },
     { name: "Quiet", emoji: "🤫" },
     { name: "Outlets", emoji: "🔌" },
     { name: "Bright", emoji: "☀️" },
     { name: "Cozy", emoji: "🛋️" },
     { name: "Late-night", emoji: "🌙" },
-  ],
-} as const;
-
-export const PREMIUM_EXPERIENCE = {
-  headline: "Silicon Valley Polish",
-  subheadline: "A premium experience you'll actually want to use",
-  features: [
-    {
-      title: "Lightning Fast",
-      description: "Native performance that never lags",
-      icon: "bolt",
-    },
-    {
-      title: "Beautiful Design",
-      description: "Thoughtful details at every touchpoint",
-      icon: "sparkle",
-    },
-    {
-      title: "Dark Mode",
-      description: "Easy on the eyes during late-night sessions",
-      icon: "moon",
-    },
-    {
-      title: "Native Feel",
-      description: "Feels like it belongs on your phone",
-      icon: "phone",
-    },
   ],
 } as const;
 
@@ -223,100 +227,98 @@ export const DEMO_MODE = {
   url: "https://demo.perched.app",
 } as const;
 
+// Updated: Pre-launch appropriate social proof
 export const STATS = {
   items: [
-    { value: "10K+", label: "Active Students" },
-    { value: "50+", label: "Universities" },
-    { value: "100K+", label: "Check-ins Shared" },
-    { value: "85%", label: "Keep Their Streak" },
+    { value: "500+", label: "On the Waitlist" },
+    { value: "5", label: "Launch Campuses" },
+    { value: "Feb 2025", label: "iOS Launch" },
+    { value: "Free", label: "Forever" },
   ],
-} as const;
-
-export const FOR_UNIVERSITIES = {
-  headline: "For University Administrators",
-  subheadline: "Partner with Perched to boost student engagement",
-  description:
-    "Learn how universities are using Perched to help students find study partners, build community, and improve campus life.",
-  cta: "Learn More",
-  email: "partnerships@perched.app",
 } as const;
 
 export const FEATURES = {
   headline: "Everything You Need",
-  subheadline: "Built for students, designed for connection",
+  subheadline: "Built for students, designed for productivity",
   features: [
     {
-      id: "friends",
-      emoji: "👥",
-      title: "Friend Requests",
-      description: "Connect with classmates with mutual friend previews",
+      id: "metrics",
+      emoji: "📶",
+      title: "Real-Time Metrics",
+      description: "WiFi quality, noise levels, and busyness data",
       highlight: true,
     },
     {
-      id: "campus",
-      emoji: "🎓",
-      title: "Campus Verification",
-      description: "Verified .edu emails keep your community authentic",
+      id: "friends",
+      emoji: "👥",
+      title: "Friend Activity",
+      description: "See where your friends are studying right now",
       highlight: true,
     },
     {
       id: "streaks",
       emoji: "🔥",
       title: "Daily Streaks",
-      description: "Build habits with 3, 7, 30, and 100-day milestones",
+      description: "Build habits with Duolingo-style gamification",
       highlight: true,
     },
     {
-      id: "reactions",
-      emoji: "❤️",
-      title: "Reactions",
-      description: "React to check-ins with fire, coffee, and more",
+      id: "campus",
+      emoji: "🎓",
+      title: "Campus Verified",
+      description: "Connect with verified .edu students only",
       highlight: false,
     },
     {
       id: "vibes",
       emoji: "✨",
       title: "Vibe Tags",
-      description: "WiFi, Quiet, Outlets—find exactly what you need",
+      description: "Filter by WiFi, Quiet, Outlets, and more",
       highlight: false,
     },
     {
       id: "achievements",
       emoji: "🏆",
       title: "Achievements",
-      description: "Unlock badges for exploring and building habits",
+      description: "Unlock 25+ badges for exploring",
       highlight: false,
     },
   ],
 } as const;
 
+// Updated FAQ with launch-related questions
 export const FAQ = {
   headline: "Questions",
   questions: [
     {
-      question: "Is Perched free?",
+      question: "When does Perched launch?",
       answer:
-        "Yes! Perched is completely free. We believe in building community first. Core features like check-ins, streaks, and friend connections will always be free.",
+        "We're launching on iOS in February 2025. Join the waitlist to be notified the moment we go live!",
     },
     {
-      question: "How does campus verification work?",
+      question: "Which campuses can I use it at?",
       answer:
-        "Sign up with your .edu email and we'll send a verification link. Once verified, you'll automatically connect with your campus community and get access to campus-specific features.",
+        "We're starting at Rice University, UT Austin, UCLA, Stanford, and MIT. Expanding to 20+ campuses in the following months. Request your campus by joining the waitlist!",
     },
     {
-      question: "What are streaks?",
+      question: "Is Perched really free?",
       answer:
-        "Check in once per day to build your streak. Hit milestones at 3, 7, 30, and 100 days to unlock achievements and climb the leaderboards. Miss a day and your streak resets—but you can always start again!",
+        "Yes! Free forever with unlimited check-ins, streaks, and friend connections. Premium ($4.99/mo) unlocks advanced filters, ad-free experience, and exclusive leaderboards.",
+    },
+    {
+      question: "How does the real-time data work?",
+      answer:
+        "When users check in, they rate WiFi quality (1-5 stars), noise level (Quiet/Moderate/Lively), and how busy it is. This crowd-sourced data is shown to everyone in real-time.",
+    },
+    {
+      question: "How does Perched protect my privacy?",
+      answer:
+        "Your location is NEVER shared publicly. Only you can see your exact location. Friends see 'here now' status (within 2 hours) but not your precise coordinates.",
     },
     {
       question: "Can I use Perched without a .edu email?",
       answer:
         "Yes! Anyone can use Perched to find great study spots and build streaks. Campus features like classmate discovery require .edu verification.",
-    },
-    {
-      question: "Is my location always visible?",
-      answer:
-        "You choose when to share. Check-ins can be shared with friends only, or kept completely private while still building your streak.",
     },
     {
       question: "When is Android coming?",
@@ -339,7 +341,7 @@ export const FOOTER = {
       links: [
         { label: "Features", href: "#features" },
         { label: "Demo", href: "https://demo.perched.app" },
-        { label: "Download", href: "#download" },
+        { label: "Waitlist", href: "#waitlist" },
       ],
     },
     company: {
@@ -360,12 +362,11 @@ export const FOOTER = {
       ],
     },
     social: {
-      title: "Social",
+      title: "Follow Our Journey",
       links: [
         { label: "Instagram", href: "https://instagram.com/perchedapp" },
         { label: "TikTok", href: "https://tiktok.com/@perchedapp" },
         { label: "Twitter", href: "https://twitter.com/perchedapp" },
-        { label: "Discord", href: "https://discord.gg/perched" },
       ],
     },
   },
@@ -384,14 +385,26 @@ export const NAVIGATION = {
     { label: "Demo", href: "#demo" },
     { label: "FAQ", href: "#faq" },
   ],
-  cta: "Download",
+  cta: "Join Waitlist",
 } as const;
 
 export const WAITLIST_FORM = {
-  headline: "Join the Squad",
-  description: "Be the first to find your perfect study spot and connect with your campus.",
+  headline: "Be First to Find Your Perfect Spot",
+  description: "Launching on iOS in February 2025. Join the waitlist to get notified when we go live.",
   tallyFormUrl: "https://tally.so/r/J9OXpz",
   primaryCTA: "Join the Waitlist",
+  privacyNote: "We'll only email you when we launch. No spam.",
+} as const;
+
+// Social CTA section
+export const SOCIAL_CTA = {
+  headline: "Follow Our Launch Journey",
+  description: "Join 500+ students following @perchedapp for launch updates",
+  links: [
+    { label: "Instagram", href: "https://instagram.com/perchedapp", icon: "instagram" },
+    { label: "Twitter", href: "https://twitter.com/perchedapp", icon: "twitter" },
+    { label: "TikTok", href: "https://tiktok.com/@perchedapp", icon: "tiktok" },
+  ],
 } as const;
 
 // Color palette (for reference)
@@ -417,18 +430,18 @@ export const COLORS = {
 
 // SEO
 export const SEO = {
-  title: "Perched - Find Your Perfect Study Spot & Squad",
+  title: "Perched - Find Great Coffee Shops & Study Spots with Real-Time Data",
   description:
-    "Discover coffee shops, libraries, and coworking spaces where your friends and classmates are working. Build streaks, unlock achievements, and connect with your campus community.",
+    "Discover the best places to work and study with real-time WiFi, noise, and busyness data. Join 500+ students and remote workers finding their perfect spot.",
   keywords: [
     "study spots",
-    "coworking spaces",
-    "campus friends",
-    "college productivity",
-    "student networking",
-    "productivity gamification",
-    "study buddy",
-    "library finder",
     "coffee shop wifi",
+    "coworking spaces",
+    "library finder",
+    "campus study spots",
+    "real-time wifi data",
+    "productivity app",
+    "study buddy",
+    "college productivity",
   ],
 } as const;
