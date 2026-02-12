@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { SEO, SITE_CONFIG } from "./lib/constants";
+import { SEO, SITE } from "./lib/constants";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_CONFIG.url),
+  metadataBase: new URL("https://perched.app"),
   title: SEO.title,
   description: SEO.description,
   keywords: [...SEO.keywords],
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: SEO.title,
     description: SEO.description,
-    url: SITE_CONFIG.url,
-    siteName: SITE_CONFIG.name,
+    url: "https://perched.app",
+    siteName: SITE.name,
     type: "website",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Perched - Find Your Perfect Study Spot & Squad",
+        alt: "Perched — Find your spot. Share the vibe.",
       },
     ],
   },
