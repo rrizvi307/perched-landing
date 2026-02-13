@@ -6,7 +6,7 @@
     <title>Perched | Find your spot. Share the vibe.</title>
     <meta
       name="description"
-      content="Perched helps you find your spot and share the vibe with community-powered workspace insights."
+      content="Perched helps you discover coffee shops and third places with real-time check-ins on noise, crowd level, price, quality, and vibe."
     />
     <meta name="theme-color" content="#7C3AED" />
     <link rel="icon" type="image/png" sizes="1024x1024" href="/favicon.png?v=20260213" />
@@ -114,9 +114,17 @@
       }
 
       .tagline {
-        margin: 0.6rem 0 1.2rem;
+        margin: 0.6rem 0 0.5rem;
         font-size: clamp(1rem, 4.2vw, 1.25rem);
         color: var(--text-soft);
+      }
+
+      .subline {
+        margin: 0 0 1.2rem;
+        color: var(--text-soft);
+        font-size: 0.94rem;
+        line-height: 1.35;
+        max-width: 42ch;
       }
 
       .cta {
@@ -154,6 +162,20 @@
         list-style: none;
         display: grid;
         gap: 0.65rem;
+      }
+
+      .section {
+        display: grid;
+        gap: 0.62rem;
+      }
+
+      .section-label {
+        margin: 0;
+        color: var(--text-soft);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
       .feature {
@@ -215,6 +237,10 @@
 
         .features {
           grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .features.signals {
+          grid-template-columns: 1fr;
         }
 
         .feature {
@@ -335,18 +361,39 @@
 
         <h1 id="hero-title">Perched</h1>
         <p class="tagline">Find your spot. Share the vibe.</p>
+        <p class="subline">
+          Check in at cafes, libraries, parks, and co-working spaces to share live signals and help
+          people find the right spot.
+        </p>
 
-        <a class="cta" href="#">Join the Beta on TestFlight</a>
+        <a class="cta" href="TESTFLIGHT_LINK">Join the Beta</a>
       </section>
 
-      <ul class="features" aria-label="Perched features">
-        <li class="feature">Check in at cafes, parks, libraries &amp; co-working spaces</li>
-        <li class="feature">
-          Discover spots nearby with crowd-sourced WiFi, noise &amp; busyness ratings
-        </li>
-        <li class="feature">See where your friends are hanging out</li>
-        <li class="feature">AI-powered workspace insights from the community</li>
-      </ul>
+      <section class="section" aria-label="Signals shared on check-in">
+        <p class="section-label">Signals Shared On Check-In</p>
+        <ul class="features signals">
+          <li class="feature">Noise level (silent &rarr; loud)</li>
+          <li class="feature">How busy or crowded it is</li>
+          <li class="feature">Drink price ($, $$, $$$)</li>
+          <li class="feature">Drink quality (5-point scale)</li>
+          <li class="feature">
+            Vibe tags: Quiet, Study, Social, Good Coffee, Cozy, Spacious, Late-night, Outdoor Seating
+          </li>
+          <li class="feature">Photo + caption</li>
+        </ul>
+      </section>
+
+      <section class="section" aria-label="Perched value">
+        <p class="section-label">Why Perched</p>
+        <ul class="features">
+          <li class="feature">
+            Find the best coffee shops and study spots nearby, rated by real people in real time
+          </li>
+          <li class="feature">Know before you go: see how busy, loud, and pricey a spot is right now</li>
+          <li class="feature">Share your favorite third places with friends</li>
+          <li class="feature">Build a social map of your city's best spots</li>
+        </ul>
+      </section>
 
       <footer>
         <nav class="footer-links" aria-label="Footer links">
