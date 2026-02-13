@@ -4,9 +4,24 @@
     {
       "src": "index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "favicon.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "favicon.svg",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "handle": "filesystem"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
