@@ -6,6 +6,14 @@
       "use": "@vercel/static"
     },
     {
+      "src": "privacy.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "tos.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "favicon.png",
       "use": "@vercel/static"
     },
@@ -21,11 +29,11 @@
   "routes": [
     {
       "src": "/privacy/?",
-      "dest": "https://spot-app-ce2d8.web.app/privacy-policy.html"
+      "dest": "/privacy.html"
     },
     {
       "src": "/tos/?",
-      "dest": "https://spot-app-ce2d8.web.app/terms-of-service.html"
+      "dest": "/tos.html"
     },
     {
       "handle": "filesystem"
