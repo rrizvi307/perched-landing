@@ -20,6 +20,14 @@
   ],
   "routes": [
     {
+      "src": "/privacy/?",
+      "dest": "https://spot-app-ce2d8.web.app/privacy-policy.html"
+    },
+    {
+      "src": "/tos/?",
+      "dest": "https://spot-app-ce2d8.web.app/terms-of-service.html"
+    },
+    {
       "handle": "filesystem"
     },
     {
