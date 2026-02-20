@@ -164,6 +164,34 @@
         gap: 0.65rem;
       }
 
+      .showcase {
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .showcase-card {
+        margin: 0;
+        border-radius: 1.1rem;
+        border: 1px solid var(--card-border);
+        background: rgba(255, 255, 255, 0.11);
+        box-shadow: var(--shadow);
+        padding: 0.45rem;
+      }
+
+      .showcase-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 0.8rem;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+      }
+
+      .showcase-note {
+        margin: 0.5rem 0 0.1rem;
+        color: var(--text-soft);
+        font-size: 0.86rem;
+      }
+
       .section {
         display: grid;
         gap: 0.62rem;
@@ -363,6 +391,20 @@
         </p>
 
         <a class="cta" href="TESTFLIGHT_LINK">Join the Beta</a>
+      </section>
+
+      <section class="showcase" aria-label="Perched app screenshots">
+        <p class="section-label">Beta Screens</p>
+        <figure class="showcase-card">
+          <img
+            class="showcase-image"
+            src="/app-store-connect-screens.png"
+            alt="Perched app screenshots showing login, social feed, check-in flow, tags, achievements, and profile views."
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="showcase-note">Real screens from the current TestFlight beta.</figcaption>
+        </figure>
       </section>
 
       <section class="section" aria-label="Perched value">
