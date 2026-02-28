@@ -28,6 +28,14 @@
     {
       "src": "apple-touch-icon.png",
       "use": "@vercel/static"
+    },
+    {
+      "src": "perched-mark.png",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "perched-mark.svg",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
