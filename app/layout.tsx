@@ -8,8 +8,9 @@ export const metadata: Metadata = {
   description: SEO.description,
   keywords: [...SEO.keywords],
   icons: {
-    icon: [{ url: "/icon.png" }],
-    apple: [{ url: "/apple-icon.png" }],
+    icon: [{ url: "/perched-favicon.png" }],
+    shortcut: [{ url: "/perched-favicon.png" }],
+    apple: [{ url: "/perched-mark.png" }],
   },
   openGraph: {
     title: SEO.title,
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Perched — Find your spot. Share the vibe.",
+        url: "/perched-mark.png",
+        width: 1024,
+        height: 1024,
+        alt: "Perched logo mark",
       },
     ],
   },
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SEO.title,
     description: SEO.description,
-    images: ["/og-image.png"],
+    images: ["/perched-mark.png"],
   },
 };
 

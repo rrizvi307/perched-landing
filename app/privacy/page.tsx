@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
+import { SITE } from "../lib/constants";
 
 export const metadata = {
-  title: "Privacy • Perched",
+  title: "Privacy - Perched",
   description: "Privacy policy for Perched.",
 };
 
@@ -29,8 +31,8 @@ export default function PrivacyPage() {
               textDecoration: "none",
             }}
           >
-            <img
-              src="/perched-mark.png"
+            <Image
+              src="/perched-mark.svg"
               alt="Perched"
               width={24}
               height={24}
@@ -41,7 +43,7 @@ export default function PrivacyPage() {
                 objectFit: "cover",
               }}
             />
-            <span>Perched</span>
+            <span>{SITE.name}</span>
           </Link>
 
           <Link
@@ -87,23 +89,23 @@ export default function PrivacyPage() {
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>How we use it</h2>
           <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "rgba(14, 15, 18, 0.78)", lineHeight: "22px" }}>
-            <li>Provide core features (explore, feed, tap-in, recap).</li>
-            <li>Personalize results based on vibes/tags and what’s happening now.</li>
+            <li>Provide core features (explore, feed, check-in, and recap).</li>
+            <li>Personalize results based on vibes, tags, and what is happening now.</li>
             <li>Communicate with you about early access and product updates.</li>
             <li>Protect the community (safety, moderation, abuse prevention).</li>
           </ul>
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>Sharing</h2>
           <p style={{ margin: "10px 0 0", color: "rgba(14, 15, 18, 0.72)", lineHeight: "22px" }}>
-            We use trusted service providers to run the product (for example, hosting and data storage). We don’t sell your personal
+            We use trusted service providers to run the product (for example, hosting and data storage). We do not sell your personal
             information.
           </p>
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>Contact</h2>
           <p style={{ margin: "10px 0 0", color: "rgba(14, 15, 18, 0.72)", lineHeight: "22px" }}>
             Questions? Email{" "}
-            <a href="mailto:perchedappteam@gmail.com" style={{ color: "rgba(14, 15, 18, 0.86)", fontWeight: 800 }}>
-              perchedappteam@gmail.com
+            <a href={`mailto:${SITE.email}`} style={{ color: "rgba(14, 15, 18, 0.86)", fontWeight: 800 }}>
+              {SITE.email}
             </a>
             .
           </p>

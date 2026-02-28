@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
+import { SITE } from "../lib/constants";
 
 export const metadata = {
-  title: "Terms • Perched",
+  title: "Terms - Perched",
   description: "Terms of service for Perched.",
 };
 
@@ -29,8 +31,8 @@ export default function TermsPage() {
               textDecoration: "none",
             }}
           >
-            <img
-              src="/perched-mark.png"
+            <Image
+              src="/perched-mark.svg"
               alt="Perched"
               width={24}
               height={24}
@@ -41,7 +43,7 @@ export default function TermsPage() {
                 objectFit: "cover",
               }}
             />
-            <span>Perched</span>
+            <span>{SITE.name}</span>
           </Link>
 
           <Link
@@ -84,29 +86,29 @@ export default function TermsPage() {
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>Your content</h2>
           <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "rgba(14, 15, 18, 0.78)", lineHeight: "22px" }}>
-            <li>You’re responsible for the content you post (photos, captions, tags).</li>
+            <li>You are responsible for the content you post (photos, captions, tags).</li>
             <li>Only post content you have the right to share.</li>
             <li>You grant Perched a license to host and display your content to operate the service.</li>
           </ul>
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>Acceptable use</h2>
           <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "rgba(14, 15, 18, 0.78)", lineHeight: "22px" }}>
-            <li>Don’t abuse, harass, or impersonate others.</li>
-            <li>Don’t attempt to disrupt or reverse engineer the product.</li>
+            <li>Do not abuse, harass, or impersonate others.</li>
+            <li>Do not attempt to disrupt or reverse engineer the product.</li>
             <li>We may remove content or suspend accounts to protect the community.</li>
           </ul>
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>Disclaimer</h2>
           <p style={{ margin: "10px 0 0", color: "rgba(14, 15, 18, 0.72)", lineHeight: "22px" }}>
-            The service is provided “as is” without warranties. To the maximum extent permitted by law, Perched is not liable for indirect
+            The service is provided as is without warranties. To the maximum extent permitted by law, Perched is not liable for indirect
             damages or loss of data.
           </p>
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>Contact</h2>
           <p style={{ margin: "10px 0 0", color: "rgba(14, 15, 18, 0.72)", lineHeight: "22px" }}>
             Questions? Email{" "}
-            <a href="mailto:perchedappteam@gmail.com" style={{ color: "rgba(14, 15, 18, 0.86)", fontWeight: 800 }}>
-              perchedappteam@gmail.com
+            <a href={`mailto:${SITE.email}`} style={{ color: "rgba(14, 15, 18, 0.86)", fontWeight: 800 }}>
+              {SITE.email}
             </a>
             .
           </p>

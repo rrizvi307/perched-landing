@@ -1,91 +1,113 @@
-// Perched Landing Page - Clean, honest, minimal
-// A social check-in app for discovering third places
-
 export const SITE = {
   name: "Perched",
   tagline: "Find your spot. Share the vibe.",
-  description: "A social check-in app for discovering cafes, parks, libraries, and other third places where life happens beyond home and work.",
+  description:
+    "Perched helps you discover coffee and work spots through real check-ins, map/list exploration, and social context from friends and campus.",
   email: "perchedappteam@gmail.com",
   instagram: "https://instagram.com/perchedapp",
   tiktok: "https://tiktok.com/@perchedapp",
-  privacy: "https://spot-app-ce2d8.web.app/privacy-policy.html",
-  terms: "https://spot-app-ce2d8.web.app/terms-of-service.html",
+  privacy: "/privacy",
+  terms: "/terms",
 } as const;
 
 export const HERO = {
-  headline: "Find your spot. Share the vibe.",
-  subheadline: "Discover cafes, parks, and cozy corners through friends who've actually been there.",
-  cta: "Download on TestFlight",
-  ctaUrl: "#", // Update when live
+  headline: "Coffee discovery with real-time context.",
+  subheadline:
+    "Explore by list or map, rank spots by coffee intent and vibe fit, and decide faster with live check-in signals.",
+  cta: "Open Perched",
+  ctaUrl: "https://perched.app",
+  secondaryCta: "Contact Support",
+  secondaryCtaUrl: `mailto:${SITE.email}`,
+  chips: [
+    "List and map explore",
+    "Intent + vibe ranking",
+    "Personalized recommendations",
+    "Social feed scopes",
+  ],
 } as const;
 
-export const FEATURES = [
+export const PILLARS = [
   {
-    icon: "checkin",
-    title: "Check in",
-    description: "Share where you're hanging out with photos, captions, and workspace ratings (WiFi, noise, outlets).",
+    title: "Explore With Map + List",
+    description:
+      "Switch between list and map views, with clustered map markers and quick recentering for nearby spots.",
   },
   {
-    icon: "discover",
-    title: "Discover spots",
-    description: "Find nearby third places on the map with real ratings from people you trust.",
+    title: "Intent-Based Discovery",
+    description:
+      "Filter by coffee intents and let vibe-aware ranking prioritize the spots that best match your goal.",
   },
   {
-    icon: "feed",
-    title: "See what's good",
-    description: "Your feed shows where friends are and what they think. React, save, plan your next visit.",
+    title: "Personalized Recommendations",
+    description:
+      "Get recommendations tuned to your check-in patterns, preferred conditions, and current context.",
   },
   {
-    icon: "insights",
-    title: "Spot insights",
-    description: "Get the real scoop on any place—busyness, WiFi quality, vibe—from community check-ins.",
+    title: "Social + Campus Context",
+    description:
+      "Use Friends features, feed scopes, and campus context to see where people are actually going.",
   },
 ] as const;
 
-export const ABOUT = {
-  headline: "Third places matter",
-  text: "We spend too much time at home and at work. The best moments happen in between—at the coffee shop where you finally finished that project, the park bench where you had that conversation, the library corner that became your second office. Perched helps you find more of those spots.",
-} as const;
-
-export const PREMIUM = {
-  headline: "Premium",
-  price: "$4.99/mo",
-  yearlyPrice: "$49.99/yr",
-  description: "Coming soon",
-  features: [
-    "Advanced filters",
-    "Custom spot lists",
-    "Export your history",
-    "Ad-free experience",
-  ],
-} as const;
+export const FEATURE_ROWS = [
+  {
+    title: "Explore with clustering",
+    description:
+      "Explore supports map/list toggle and clustered markers so busy areas stay readable.",
+  },
+  {
+    title: "Coffee intents and vibe-aware ranking",
+    description:
+      "Discovery intent chips (like coffee quality, deep work, quiet reading, and group study) blend with vibe scoring to rank results.",
+  },
+  {
+    title: "Personalized recommendation engine",
+    description:
+      "Recommendation cards use personalized and collaborative scoring with intent-aware reasons.",
+  },
+  {
+    title: "Friends tab + request workflows",
+    description:
+      "Friends supports searching by name, handle, and email, accepting requests, and syncing contacts.",
+  },
+  {
+    title: "Feed scopes and trending spots",
+    description:
+      "Feed switches between Everyone, Campus, and Friends scopes with trending spots and campus-only context.",
+  },
+  {
+    title: "Rich check-ins",
+    description:
+      "Check-ins capture noise, crowd, drink quality, drink price, WiFi, outlets, laptop-friendliness, and parking details.",
+  },
+  {
+    title: "Spot intelligence",
+    description:
+      "Spot detail surfaces Work Score, confidence, highlights, use cases, crowd forecast, and friends here now.",
+  },
+  {
+    title: "Onboarding personalization",
+    description:
+      "Onboarding asks for location and coffee intents so discovery is personalized from day one.",
+  },
+] as const;
 
 export const FOOTER = {
-  copyright: `© ${new Date().getFullYear()} Perched`,
-  madeWith: "Made with care in Houston",
-} as const;
-
-// Brand colors from the app
-export const COLORS = {
-  purple: "#8B5CF6",
-  purpleDark: "#7C3AED",
-  purpleDeep: "#6D28D9",
-  pink: "#EC4899",
-  background: "#FBFAF8",
-  text: "#1F2937",
-  textMuted: "#6B7280",
-  white: "#FFFFFF",
+  copyright: `(c) ${new Date().getFullYear()} Perched`,
+  madeWith: "Built for students, remote workers, and coffee-driven teams.",
 } as const;
 
 export const SEO = {
-  title: "Perched — Find your spot. Share the vibe.",
-  description: "A social check-in app for discovering cafes, parks, libraries, and other third places. See where friends hang out and find your next favorite spot.",
+  title: "Perched | Coffee Discovery and Spot Intelligence",
+  description:
+    "Perched helps you discover cafes and work spots with map/list explore, coffee-intent ranking, social feed scopes, and rich check-in intelligence.",
   keywords: [
-    "third places",
-    "cafe finder",
-    "social check-in",
-    "workspace finder",
-    "coworking spots",
+    "coffee discovery app",
+    "work score cafes",
+    "social check-ins",
+    "campus feed",
     "study spots",
+    "cafe recommendations",
   ],
 } as const;
+
