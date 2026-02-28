@@ -14,7 +14,7 @@ export const HERO = {
   headline: "Coffee discovery with real-time context.",
   subheadline:
     "Explore by list or map, rank spots by coffee intent and vibe fit, and decide faster with live check-in signals.",
-  cta: "Open Perched",
+  cta: "Available on App Store soon!",
   ctaUrl: "https://perched.app",
   secondaryCta: "Contact Support",
   secondaryCtaUrl: `mailto:${SITE.email}`,

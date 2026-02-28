@@ -82,6 +82,19 @@ export default function Page() {
           </div>
         </section>
 
+        <section className="mx-auto mt-8 w-full max-w-6xl rounded-3xl border border-[#ECE9F4] bg-white p-4 sm:p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#6D28D9]">Product preview</p>
+          <div className="mt-3 overflow-hidden rounded-2xl border border-[#EEEAF8]">
+            <Image
+              src="/app-store-connect-screens.png"
+              alt="Perched app preview showing onboarding, feed, explore, check-ins, friends, and profile."
+              width={2688}
+              height={1242}
+              className="h-auto w-full"
+            />
+          </div>
+        </section>
+
         <section className="mx-auto mt-14 w-full max-w-6xl">
           <h2 className="text-2xl font-bold sm:text-3xl">Core product pillars</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
