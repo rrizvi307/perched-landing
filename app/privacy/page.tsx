@@ -32,7 +32,7 @@ export default function PrivacyPage() {
             }}
           >
             <Image
-              src="/perched-mark.svg"
+              src="/perched-mark.png"
               alt="Perched"
               width={24}
               height={24}
@@ -114,3 +114,4 @@ export default function PrivacyPage() {
     </main>
   );
 }
+

@@ -32,7 +32,7 @@ export default function TermsPage() {
             }}
           >
             <Image
-              src="/perched-mark.svg"
+              src="/perched-mark.png"
               alt="Perched"
               width={24}
               height={24}
@@ -117,3 +117,4 @@ export default function TermsPage() {
     </main>
   );
 }
+

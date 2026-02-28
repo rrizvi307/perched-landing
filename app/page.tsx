@@ -14,8 +14,9 @@ export default function Page() {
     <div className="min-h-screen bg-[#FBFAF8] text-[#0E0F12]">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#ECE9F4] bg-[#FBFAF8]/95 backdrop-blur-sm">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-6">
-          <Link href="/" className="inline-flex items-center" aria-label="Perched home">
-            <Image src="/perched-logo-v3.svg" alt="Perched" width={176} height={56} priority />
+          <Link href="/" className="inline-flex items-center gap-2" aria-label="Perched home">
+            <Image src="/perched-mark.png" alt="Perched" width={32} height={32} priority />
+            <span className="text-lg font-bold text-[#111827]">Perched</span>
           </Link>
           <a
             href={HERO.ctaUrl}
@@ -66,7 +67,7 @@ export default function Page() {
 
           <div className="rounded-2xl border border-[#ECE9F4] bg-gradient-to-br from-[#FBF7FF] to-[#FFF7FB] p-6 sm:p-8">
             <div className="flex items-start justify-between gap-4">
-              <Image src="/perched-mark.svg" alt="Perched mark" width={64} height={64} />
+              <Image src="/perched-mark.png" alt="Perched mark" width={64} height={64} />
               <span className="rounded-full border border-[#E6D9FF] bg-white px-3 py-1 text-xs font-semibold text-[#6D28D9]">
                 Shipping now
               </span>
@@ -130,7 +131,7 @@ export default function Page() {
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <div className="inline-flex items-center gap-3">
-              <Image src="/perched-mark.svg" alt="Perched" width={26} height={26} />
+              <Image src="/perched-mark.png" alt="Perched" width={26} height={26} />
               <span className="text-lg font-bold">{SITE.name}</span>
             </div>
             <p className="mt-2 text-sm text-[#6B7280]">{FOOTER.madeWith}</p>
