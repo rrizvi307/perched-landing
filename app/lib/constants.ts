@@ -3,6 +3,13 @@ export type ShowcaseImage = {
   alt: string;
 };
 
+export type StoryImage = {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+};
+
 export const SITE = {
   name: "Perched",
   description:
@@ -37,16 +44,37 @@ export const SHOWCASE_IMAGES: readonly ShowcaseImage[] = [
     alt: "Perched spot detail screen with work score, crowd level, and community tags.",
   },
   {
-    src: "/screenshots/check-in-tags.png",
-    alt: "Perched check-in screen with caption, tags, and visit intent.",
-  },
-  {
     src: "/screenshots/feed-overview.png",
     alt: "Perched community feed showing recent activity and check-ins.",
   },
   {
-    src: "/screenshots/profile-overview.png",
-    alt: "Perched profile screen showing check-ins, saved spots, and streak progress.",
+    src: "/screenshots/marcus-johnson-checkin.png",
+    alt: "Perched feed card showing Marcus Johnson's check-in at Boomtown Coffee with a photo and note.",
+  },
+  {
+    src: "/screenshots/achievements.png",
+    alt: "Perched achievements screen showing check-in streaks and exploration milestones.",
+  },
+] as const;
+
+export const CHECKIN_FLOW_IMAGES: readonly StoryImage[] = [
+  {
+    src: "/screenshots/check-in-flow-vibe.png",
+    alt: "Perched check-in flow screen for adding vibe tags, visit intent, and ambiance details.",
+    title: "What you add while posting",
+    description: "Users tag the visit, their intent, and the feel of the space in a few taps.",
+  },
+  {
+    src: "/screenshots/check-in-flow-spot-intel.png",
+    alt: "Perched check-in flow screen for rating noise, crowd level, drink price, drink quality, WiFi speed, and outlet availability.",
+    title: "Signals behind the scores",
+    description: "Those structured inputs power place scores and make recommendations smarter over time.",
+  },
+  {
+    src: "/screenshots/spot-detail.png",
+    alt: "Perched spot detail screen showing a place's work score, crowd level, and community tags.",
+    title: "Where that data ends up",
+    description: "Check-in signals roll into the place view so people can compare spots faster.",
   },
 ] as const;
 

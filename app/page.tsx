@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FEATURES, FOOTER, HERO, SHOWCASE_IMAGES, SITE } from "./lib/constants";
+import {
+  CHECKIN_FLOW_IMAGES,
+  FEATURES,
+  FOOTER,
+  HERO,
+  SHOWCASE_IMAGES,
+  SITE,
+} from "./lib/constants";
 
 export default function Page() {
   return (
@@ -48,6 +55,41 @@ export default function Page() {
               ))}
             </div>
           </figure>
+        </section>
+
+        <section className="section story" aria-labelledby="checkin-title">
+          <p className="section-label">How Check-Ins Work</p>
+          <div className="story-copy">
+            <h2 id="checkin-title" className="section-title">
+              Check-in inputs turn into smarter spot scores.
+            </h2>
+            <p className="section-copy">
+              Users add quick structured signals while posting. Those inputs
+              shape the spot view and help Perched rank better places over time.
+            </p>
+          </div>
+
+          <div className="story-grid">
+            {CHECKIN_FLOW_IMAGES.map((image, index) => (
+              <figure key={image.src} className="story-card">
+                <div className="story-frame">
+                  <Image
+                    className="story-image"
+                    src={image.src}
+                    alt={image.alt}
+                    width={1320}
+                    height={2868}
+                    priority={index === 0}
+                    sizes="(min-width: 46rem) 20vw, 84vw"
+                  />
+                </div>
+                <figcaption className="story-caption">
+                  <strong>{image.title}</strong>
+                  <span>{image.description}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
 
         <section className="section" aria-label="Perched value">
@@ -257,6 +299,78 @@ export default function Page() {
           text-align: center;
         }
 
+        .story {
+          gap: 0.85rem;
+        }
+
+        .story-copy {
+          display: grid;
+          gap: 0.45rem;
+          max-width: 46rem;
+          margin: 0 auto;
+        }
+
+        .section-title {
+          margin: 0;
+          font-size: clamp(1.5rem, 5.4vw, 2.2rem);
+          line-height: 1.04;
+          letter-spacing: 0.01em;
+        }
+
+        .section-copy {
+          margin: 0 auto;
+          max-width: 44ch;
+          color: #ede9fe;
+          font-size: 0.98rem;
+          line-height: 1.4;
+        }
+
+        .story-grid {
+          display: grid;
+          gap: 0.85rem;
+        }
+
+        .story-card {
+          margin: 0;
+          display: grid;
+          gap: 0.6rem;
+          text-align: left;
+          padding: 0.55rem;
+          border-radius: 1.15rem;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          background: rgba(255, 255, 255, 0.11);
+          box-shadow: 0 18px 44px rgba(34, 11, 87, 0.34);
+        }
+
+        .story-frame {
+          overflow: hidden;
+          border-radius: 0.9rem;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        .story-image {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        .story-caption {
+          display: grid;
+          gap: 0.22rem;
+          padding: 0 0.12rem 0.08rem;
+        }
+
+        .story-caption strong {
+          font-size: 1rem;
+        }
+
+        .story-caption span {
+          color: #ede9fe;
+          font-size: 0.93rem;
+          line-height: 1.36;
+        }
+
         .section-label {
           margin: 0;
           color: #ede9fe;
@@ -330,6 +444,11 @@ export default function Page() {
           .showcase-grid {
             grid-template-columns: repeat(6, minmax(0, 1fr));
             gap: 0.45rem;
+          }
+
+          .story-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: start;
           }
 
           .features {
