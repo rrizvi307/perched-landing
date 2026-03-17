@@ -1,156 +1,346 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { FEATURE_ROWS, FOOTER, HERO, PILLARS, SITE } from "./lib/constants";
-
-const ACCENT_STYLES = [
-  "from-purple-50 to-pink-50 border-purple-100",
-  "from-pink-50 to-white border-pink-100",
-  "from-violet-50 to-white border-violet-100",
-  "from-fuchsia-50 to-white border-fuchsia-100",
-] as const;
+import { FEATURES, FOOTER, HERO, SHOWCASE_IMAGES, SITE } from "./lib/constants";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-[#FBFAF8] text-[#0E0F12]">
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#ECE9F4] bg-[#FBFAF8]/95 backdrop-blur-sm">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-6">
-          <Link href="/" className="inline-flex items-center gap-2" aria-label="Perched home">
-            <Image src="/perched-mark.png" alt="Perched" width={32} height={32} priority />
-            <span className="text-lg font-bold text-[#111827]">Perched</span>
-          </Link>
-          <a
-            href={HERO.ctaUrl}
-            className="rounded-full border border-[#7C3AED] bg-[#7C3AED] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#6D28D9]"
-          >
-            {HERO.cta}
-          </a>
-        </div>
-      </header>
-
-      <main className="px-5 pb-20 pt-28 sm:px-6">
-        <section className="mx-auto grid w-full max-w-6xl gap-8 rounded-3xl border border-[#ECE9F4] bg-white p-6 shadow-[0_16px_60px_rgba(124,58,237,0.08)] lg:grid-cols-[1.2fr_0.8fr] lg:p-10">
-          <div>
-            <p className="inline-flex rounded-full border border-[#E6D9FF] bg-[#F6F0FF] px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-[#6D28D9]">
-              Built from the live app experience
-            </p>
-            <h1 className="mt-4 text-4xl font-extrabold leading-tight sm:text-5xl lg:text-[3.5rem]">
-              {HERO.headline}
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#4B5563] sm:text-lg">{HERO.subheadline}</p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {HERO.chips.map((chip) => (
-                <span
-                  key={chip}
-                  className="rounded-full border border-[#EEE6FF] bg-[#FAF7FF] px-3 py-1 text-xs font-medium text-[#4C1D95] sm:text-sm"
-                >
-                  {chip}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={HERO.ctaUrl}
-                className="inline-flex items-center rounded-full bg-[#7C3AED] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#6D28D9]"
-              >
-                {HERO.cta}
-              </a>
-              <a
-                href={HERO.secondaryCtaUrl}
-                className="inline-flex items-center rounded-full border border-[#E5D9FF] bg-[#FBF8FF] px-6 py-3 text-sm font-semibold text-[#5B21B6] transition-colors hover:bg-[#F3E8FF]"
-              >
-                {HERO.secondaryCta}
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-[#ECE9F4] bg-gradient-to-br from-[#FBF7FF] to-[#FFF7FB] p-6 sm:p-8">
-            <div className="flex items-start justify-between gap-4">
-              <Image src="/perched-mark.png" alt="Perched mark" width={64} height={64} />
-              <span className="rounded-full border border-[#E6D9FF] bg-white px-3 py-1 text-xs font-semibold text-[#6D28D9]">
-                Shipping now
-              </span>
-            </div>
-            <p className="mt-6 text-sm leading-relaxed text-[#4B5563] sm:text-base">
-              Perched combines check-in metrics, social activity, and place intelligence so you can choose the right spot before you leave.
-            </p>
-            <ul className="mt-6 space-y-3 text-sm text-[#1F2937]">
-              <li className="rounded-xl border border-[#EDE7FF] bg-white px-4 py-3">Feed scopes: Everyone, Campus, Friends</li>
-              <li className="rounded-xl border border-[#EDE7FF] bg-white px-4 py-3">Spot intelligence with Work Score + crowd forecast</li>
-              <li className="rounded-xl border border-[#EDE7FF] bg-white px-4 py-3">Friends requests and contact syncing</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="mx-auto mt-8 w-full max-w-6xl rounded-3xl border border-[#ECE9F4] bg-white p-4 sm:p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#6D28D9]">Product preview</p>
-          <div className="mt-3 overflow-hidden rounded-2xl border border-[#EEEAF8]">
+    <div className="landing-root">
+      <main className="page">
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="logo-box" aria-hidden="true">
             <Image
-              src="/app-store-connect-screens.png"
-              alt="Perched app preview showing onboarding, feed, explore, check-ins, friends, and profile."
-              width={2688}
-              height={1242}
-              className="h-auto w-full"
+              src="/perched-mark.png"
+              alt=""
+              width={84}
+              height={84}
+              priority
+              className="logo-mark"
             />
           </div>
+
+          <h1 id="hero-title">{HERO.title}</h1>
+          <p className="tagline">{HERO.tagline}</p>
+          <p className="subline">{HERO.subline}</p>
+
+          <a className="cta" href={HERO.ctaUrl}>
+            {HERO.cta}
+          </a>
         </section>
 
-        <section className="mx-auto mt-14 w-full max-w-6xl">
-          <h2 className="text-2xl font-bold sm:text-3xl">Core product pillars</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {PILLARS.map((item, index) => (
-              <article
-                key={item.title}
-                className={`rounded-2xl border bg-gradient-to-br p-6 ${ACCENT_STYLES[index % ACCENT_STYLES.length]}`}
-              >
-                <h3 className="text-lg font-bold text-[#111827]">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#374151] sm:text-base">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto mt-14 w-full max-w-6xl rounded-3xl border border-[#ECE9F4] bg-white p-6 sm:p-8">
-          <h2 className="text-2xl font-bold sm:text-3xl">What the app currently ships</h2>
-          <p className="mt-2 text-sm leading-relaxed text-[#6B7280] sm:text-base">
-            This page reflects the current mobile app behavior, including discovery intents, feed scopes, check-in metrics, and spot intelligence.
-          </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">
-            {FEATURE_ROWS.map((feature) => (
-              <article key={feature.title} className="rounded-2xl border border-[#EEEAF8] bg-[#FCFBFE] p-5">
-                <h3 className="text-base font-semibold text-[#111827] sm:text-lg">{feature.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-[#4B5563]">{feature.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-      </main>
-
-      <footer className="border-t border-[#ECE9F4] bg-white px-5 py-10 sm:px-6">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <div className="inline-flex items-center gap-3">
-              <Image src="/perched-mark.png" alt="Perched" width={26} height={26} />
-              <span className="text-lg font-bold">{SITE.name}</span>
+        <section className="showcase" aria-label="Perched app screenshots">
+          <p className="section-label">Beta Screens</p>
+          <figure className="showcase-card">
+            <div className="showcase-grid">
+              {SHOWCASE_IMAGES.map((image, index) => (
+                <div key={image.src} className="showcase-frame">
+                  <Image
+                    className="showcase-image"
+                    src={image.src}
+                    alt={image.alt}
+                    width={1320}
+                    height={2868}
+                    priority={index < 3}
+                    sizes="(min-width: 46rem) 15vw, 28vw"
+                  />
+                </div>
+              ))}
             </div>
-            <p className="mt-2 text-sm text-[#6B7280]">{FOOTER.madeWith}</p>
-            <p className="mt-1 text-sm text-[#6B7280]">Support: <a href={`mailto:${SITE.email}`} className="font-medium text-[#4C1D95] hover:text-[#6D28D9]">{SITE.email}</a></p>
-          </div>
+          </figure>
+        </section>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium text-[#4B5563]">
-            <a href={SITE.privacy} className="hover:text-[#6D28D9]">Privacy</a>
-            <a href={SITE.terms} className="hover:text-[#6D28D9]">Terms</a>
-            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[#6D28D9]">
+        <section className="section" aria-label="Perched value">
+          <p className="section-label">Why Perched</p>
+          <ul className="features">
+            {FEATURES.map((feature) => (
+              <li key={feature} className="feature">
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <footer>
+          <nav className="footer-links" aria-label="Footer links">
+            <Link href={SITE.privacy}>Privacy Policy</Link>
+            <Link href={SITE.terms}>Terms of Service</Link>
+            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
-            <a href={SITE.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-[#6D28D9]">
+            <a href={SITE.tiktok} target="_blank" rel="noopener noreferrer">
               TikTok
             </a>
-          </div>
-        </div>
-        <div className="mx-auto mt-6 w-full max-w-6xl border-t border-[#F0EBFA] pt-4 text-sm text-[#9CA3AF]">{FOOTER.copyright}</div>
-      </footer>
+          </nav>
+          <p className="support">
+            Support: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+          <p className="made">{FOOTER.madeWith}</p>
+        </footer>
+      </main>
+
+      <style jsx>{`
+        .landing-root {
+          position: relative;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          overflow-x: hidden;
+          background: linear-gradient(160deg, #7c3aed 0%, #6d28d9 100%);
+          color: #ffffff;
+          font-family: "Avenir Next", "SF Pro Display", "Helvetica Neue", "Segoe UI", sans-serif;
+          -webkit-font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
+        }
+
+        .landing-root::before,
+        .landing-root::after {
+          content: "";
+          position: fixed;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        .landing-root::before {
+          inset: -20% auto auto -15%;
+          width: 60vw;
+          height: 60vw;
+          background: radial-gradient(circle, rgba(236, 72, 153, 0.28) 0%, rgba(236, 72, 153, 0) 68%);
+        }
+
+        .landing-root::after {
+          inset: auto -15% -25% auto;
+          width: 70vw;
+          height: 70vw;
+          background: radial-gradient(circle, rgba(196, 181, 253, 0.26) 0%, rgba(196, 181, 253, 0) 72%);
+        }
+
+        .page {
+          position: relative;
+          z-index: 1;
+          width: min(64rem, 100%);
+          min-height: 100vh;
+          padding: 1.25rem 1rem 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 1rem;
+        }
+
+        .page > * {
+          width: 100%;
+        }
+
+        .hero {
+          padding: 1.25rem;
+          border-radius: 1.25rem;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          background: rgba(255, 255, 255, 0.12);
+          backdrop-filter: blur(6px);
+          box-shadow: 0 18px 44px rgba(34, 11, 87, 0.34);
+          text-align: center;
+        }
+
+        .logo-box {
+          width: 5.25rem;
+          height: 5.25rem;
+          border-radius: 1rem;
+          background: rgba(255, 255, 255, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          display: grid;
+          place-items: center;
+          margin: 0 auto 0.95rem;
+        }
+
+        .logo-mark {
+          width: 4rem;
+          height: 4rem;
+          object-fit: contain;
+        }
+
+        h1 {
+          margin: 0;
+          font-size: clamp(2.2rem, 9vw, 3.25rem);
+          line-height: 1;
+          letter-spacing: 0.02em;
+        }
+
+        .tagline {
+          margin: 0.6rem 0 0.5rem;
+          font-size: clamp(1rem, 4.2vw, 1.25rem);
+          color: #ede9fe;
+        }
+
+        .subline {
+          margin: 0 auto 1.2rem;
+          color: #ede9fe;
+          font-size: 0.94rem;
+          line-height: 1.35;
+          max-width: 42ch;
+        }
+
+        .cta {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 3.2rem;
+          padding: 0.8rem 1.15rem;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.45);
+          background: #ffffff;
+          color: #5b21b6;
+          text-decoration: none;
+          font-weight: 700;
+          letter-spacing: 0.01em;
+          box-shadow: 0 10px 28px rgba(17, 24, 39, 0.26);
+          transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+        }
+
+        .cta:hover,
+        .cta:focus-visible {
+          transform: translateY(-1px);
+          box-shadow: 0 14px 34px rgba(17, 24, 39, 0.32);
+          opacity: 0.96;
+        }
+
+        .cta:focus-visible {
+          outline: 3px solid rgba(255, 255, 255, 0.48);
+          outline-offset: 3px;
+        }
+
+        .features {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: grid;
+          gap: 0.65rem;
+        }
+
+        .showcase {
+          display: grid;
+          gap: 0.6rem;
+          text-align: center;
+        }
+
+        .showcase-card {
+          margin: 0;
+          border-radius: 1.1rem;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          background: rgba(255, 255, 255, 0.11);
+          box-shadow: 0 18px 44px rgba(34, 11, 87, 0.34);
+          padding: 0.45rem;
+        }
+
+        .showcase-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 0.35rem;
+        }
+
+        .showcase-frame {
+          overflow: hidden;
+          border-radius: 0.8rem;
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        .showcase-image {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+
+        .section {
+          display: grid;
+          gap: 0.62rem;
+          text-align: center;
+        }
+
+        .section-label {
+          margin: 0;
+          color: #ede9fe;
+          font-size: 0.76rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .feature {
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          background: rgba(255, 255, 255, 0.11);
+          color: #ffffff;
+          border-radius: 0.95rem;
+          padding: 0.8rem 0.85rem;
+          font-size: 0.95rem;
+          line-height: 1.3;
+          text-align: center;
+        }
+
+        footer {
+          margin-top: auto;
+          padding: 0.45rem 0.25rem 0.35rem;
+          color: #ede9fe;
+          display: grid;
+          justify-items: center;
+          text-align: center;
+          gap: 0.7rem;
+        }
+
+        .footer-links {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.55rem 0.95rem;
+        }
+
+        .footer-links a,
+        .support a {
+          color: #ffffff;
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus-visible,
+        .support a:hover,
+        .support a:focus-visible {
+          border-bottom-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .support,
+        .made {
+          font-size: 0.92rem;
+        }
+
+        .made {
+          letter-spacing: 0.02em;
+        }
+
+        @media (min-width: 46rem) {
+          .page {
+            padding: 2rem 1.8rem 1.4rem;
+            gap: 1.25rem;
+          }
+
+          .hero {
+            padding: 1.8rem;
+          }
+
+          .showcase-grid {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 0.45rem;
+          }
+
+          .features {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .feature {
+            font-size: 0.99rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }
