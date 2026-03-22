@@ -1,103 +1,90 @@
-export type ShowcaseImage = {
-  src: string;
-  alt: string;
-};
-
-export type StoryImage = {
-  src: string;
-  alt: string;
-  title: string;
-  description: string;
-};
+// Perched Landing Page - Clean, honest, minimal
+// A social check-in app for discovering third places
 
 export const SITE = {
   name: "Perched",
-  description:
-    "Perched helps you discover coffee shops and third places with real-time check-ins on noise, crowd level, price, quality, and vibe.",
+  tagline: "Find your spot. Share the vibe.",
+  description: "A social check-in app for discovering cafes, parks, libraries, and other third places where life happens beyond home and work.",
   email: "perchedappteam@gmail.com",
   instagram: "https://instagram.com/perchedapp",
   tiktok: "https://tiktok.com/@perchedapp",
-  privacy: "/privacy",
-  terms: "/terms",
+  privacy: "https://spot-app-ce2d8.web.app/privacy-policy.html",
+  terms: "https://spot-app-ce2d8.web.app/terms-of-service.html",
 } as const;
 
 export const HERO = {
-  title: "Perched",
-  tagline: "Find your spot. Share the vibe.",
-  subline:
-    "Check in at cafes, libraries, parks, and co-working spaces to share live signals and help people find the right spot.",
-  cta: "Available on App Store Soon",
+  headline: "Find your spot. Share the vibe.",
+  subheadline: "Discover cafes, parks, and cozy corners through friends who've actually been there.",
+  cta: "Download on TestFlight",
   ctaUrl: "#",
 } as const;
 
-export const SHOWCASE_IMAGES: readonly ShowcaseImage[] = [
-  {
-    src: "/screenshots/explore-map.png",
-    alt: "Perched explore map screen with nearby spots and discovery filters.",
-  },
-  {
-    src: "/screenshots/explore-ranking.png",
-    alt: "Perched recommendations screen with ranked spots and work scores.",
-  },
-  {
-    src: "/screenshots/spot-detail.png",
-    alt: "Perched spot detail screen with work score, crowd level, and community tags.",
-  },
-  {
-    src: "/screenshots/feed-overview.png",
-    alt: "Perched community feed showing recent activity and check-ins.",
-  },
-  {
-    src: "/screenshots/marcus-johnson-checkin.png",
-    alt: "Perched feed card showing Marcus Johnson's check-in at Boomtown Coffee with a photo and note.",
-  },
-  {
-    src: "/screenshots/achievements.png",
-    alt: "Perched achievements screen showing check-in streaks and exploration milestones.",
-  },
-] as const;
-
-export const CHECKIN_FLOW_IMAGES: readonly StoryImage[] = [
-  {
-    src: "/screenshots/check-in-flow-vibe.png",
-    alt: "Perched check-in flow screen for adding vibe tags, visit intent, and ambiance details.",
-    title: "What you add while posting",
-    description: "Users tag the visit, their intent, and the feel of the space in a few taps.",
-  },
-  {
-    src: "/screenshots/check-in-flow-spot-intel.png",
-    alt: "Perched check-in flow screen for rating noise, crowd level, drink price, drink quality, WiFi speed, and outlet availability.",
-    title: "Signals behind the scores",
-    description: "Those structured inputs power place scores and make recommendations smarter over time.",
-  },
-  {
-    src: "/screenshots/spot-detail.png",
-    alt: "Perched spot detail screen showing a place's work score, crowd level, and community tags.",
-    title: "Where that data ends up",
-    description: "Check-in signals roll into the place view so people can compare spots faster.",
-  },
-] as const;
-
 export const FEATURES = [
-  "Find the best coffee shops and study spots nearby, rated by real people in real time",
-  "Know before you go: see how busy, loud, and pricey a spot is right now",
-  "Share your favorite third places with friends",
-  "Build a social map of your city's best spots",
+  {
+    icon: "checkin",
+    title: "Check in",
+    description: "Share where you're hanging out with photos, captions, and workspace ratings (WiFi, noise, outlets).",
+  },
+  {
+    icon: "discover",
+    title: "Discover spots",
+    description: "Find nearby third places on the map with real ratings from people you trust.",
+  },
+  {
+    icon: "feed",
+    title: "See what's good",
+    description: "Your feed shows where friends are and what they think. React, save, plan your next visit.",
+  },
+  {
+    icon: "insights",
+    title: "Spot insights",
+    description: "Get the real scoop on any place—busyness, WiFi quality, vibe—from community check-ins.",
+  },
 ] as const;
+
+export const ABOUT = {
+  headline: "Third places matter",
+  text: "We spend too much time at home and at work. The best moments happen in between—at the coffee shop where you finally finished that project, the park bench where you had that conversation, the library corner that became your second office. Perched helps you find more of those spots.",
+} as const;
+
+export const PREMIUM = {
+  headline: "Premium",
+  price: "$4.99/mo",
+  yearlyPrice: "$49.99/yr",
+  description: "Coming soon",
+  features: [
+    "Advanced filters",
+    "Custom spot lists",
+    "Export your history",
+    "Ad-free experience",
+  ],
+} as const;
 
 export const FOOTER = {
-  madeWith: "Made in Houston",
+  copyright: `© ${new Date().getFullYear()} Perched`,
+  madeWith: "Made with care in Houston",
+} as const;
+
+export const COLORS = {
+  purple: "#8B5CF6",
+  purpleDark: "#7C3AED",
+  purpleDeep: "#6D28D9",
+  pink: "#EC4899",
+  background: "#FBFAF8",
+  text: "#1F2937",
+  textMuted: "#6B7280",
+  white: "#FFFFFF",
 } as const;
 
 export const SEO = {
-  title: "Perched | Find your spot. Share the vibe.",
-  description: SITE.description,
+  title: "Perched — Find your spot. Share the vibe.",
+  description: "A social check-in app for discovering cafes, parks, libraries, and other third places. See where friends hang out and find your next favorite spot.",
   keywords: [
-    "Perched app",
-    "coffee shops",
     "third places",
-    "check-ins",
-    "study spots",
+    "cafe finder",
+    "social check-in",
     "workspace finder",
+    "coworking spots",
+    "study spots",
   ],
 } as const;
