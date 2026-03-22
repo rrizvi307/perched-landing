@@ -4,6 +4,30 @@ import { useState } from "react";
 
 const GOOGLE_SCRIPT_URL = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || "";
 
+const inputStyle: React.CSSProperties = {
+  width: "100%",
+  padding: "0.7rem 0.9rem",
+  borderRadius: "0.65rem",
+  border: "1px solid rgba(255,255,255,0.3)",
+  background: "rgba(255,255,255,0.12)",
+  color: "#fff",
+  fontSize: "0.92rem",
+  outline: "none",
+};
+
+const buttonStyle: React.CSSProperties = {
+  width: "100%",
+  padding: "0.75rem",
+  borderRadius: "0.65rem",
+  border: "1px solid rgba(255,255,255,0.45)",
+  background: "#fff",
+  color: "#5b21b6",
+  fontWeight: 700,
+  fontSize: "0.95rem",
+  cursor: "pointer",
+  letterSpacing: "0.01em",
+};
+
 export function EmailCapture() {
   const [fields, setFields] = useState({ name: "", email: "", city: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -30,24 +54,22 @@ export function EmailCapture() {
 
   if (status === "success") {
     return (
-      <div className="text-center py-4">
-        <p className="text-purple-600 font-semibold">You&apos;re on the list!</p>
-        <p className="text-gray-500 text-sm mt-1">We&apos;ll let you know when we launch.</p>
+      <div style={{ textAlign: "center", padding: "0.5rem 0" }}>
+        <p style={{ fontWeight: 700, color: "#fff" }}>You&apos;re on the list!</p>
+        <p style={{ color: "#ede9fe", fontSize: "0.88rem", marginTop: "0.25rem" }}>We&apos;ll let you know when we launch.</p>
       </div>
     );
   }
 
-  const inputClass = "w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 placeholder-gray-400 bg-white";
-
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-sm mx-auto">
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "0.55rem", maxWidth: "22rem", margin: "0 auto" }}>
       <input
         type="text"
         value={fields.name}
         onChange={(e) => setFields({ ...fields, name: e.target.value })}
         placeholder="Your name"
         required
-        className={inputClass}
+        style={inputStyle}
       />
       <input
         type="email"
@@ -55,24 +77,24 @@ export function EmailCapture() {
         onChange={(e) => setFields({ ...fields, email: e.target.value })}
         placeholder="Your email"
         required
-        className={inputClass}
+        style={inputStyle}
       />
       <input
         type="text"
         value={fields.city}
         onChange={(e) => setFields({ ...fields, city: e.target.value })}
         placeholder="Your city"
-        className={inputClass}
+        style={inputStyle}
       />
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full px-6 py-3 bg-purple-500 text-white font-semibold rounded-xl hover:bg-purple-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        style={{ ...buttonStyle, opacity: status === "loading" ? 0.6 : 1 }}
       >
         {status === "loading" ? "Joining..." : "Join Waitlist"}
       </button>
       {status === "error" && (
-        <p className="text-red-500 text-sm text-center">Something went wrong. Try again.</p>
+        <p style={{ color: "#fca5a5", fontSize: "0.85rem", textAlign: "center" }}>Something went wrong. Try again.</p>
       )}
     </form>
   );
