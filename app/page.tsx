@@ -10,6 +10,7 @@ import {
   SHOWCASE_IMAGES,
   SITE,
 } from "./lib/constants";
+import { EmailCapture } from "./components/EmailCapture";
 
 export default function Page() {
   return (
@@ -34,6 +35,11 @@ export default function Page() {
           <a className="cta" href={HERO.ctaUrl}>
             {HERO.cta}
           </a>
+
+          <div className="waitlist">
+            <p className="waitlist-label">Stay up to date</p>
+            <EmailCapture />
+          </div>
         </section>
 
         <section className="showcase" aria-label="Perched app screenshots">
@@ -249,6 +255,20 @@ export default function Page() {
         .cta:focus-visible {
           outline: 3px solid rgba(255, 255, 255, 0.48);
           outline-offset: 3px;
+        }
+
+        .waitlist {
+          margin-top: 1.2rem;
+          padding-top: 1.2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .waitlist-label {
+          margin: 0 0 0.75rem;
+          font-size: 0.88rem;
+          font-weight: 600;
+          color: #ede9fe;
+          letter-spacing: 0.02em;
         }
 
         .features {
