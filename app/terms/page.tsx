@@ -66,7 +66,7 @@ export default function TermsPage() {
         <div style={{ marginTop: 22 }}>
           <h1 style={{ margin: 0, fontSize: 34, letterSpacing: "-0.9px", lineHeight: 1.12 }}>Terms of Service</h1>
           <p style={{ margin: "10px 0 0", color: "rgba(14, 15, 18, 0.72)", lineHeight: "22px" }}>
-            Perched is in early access. By using the product, you agree to these terms.
+            By using Perched, you agree to these terms.
           </p>
         </div>
 
@@ -79,9 +79,9 @@ export default function TermsPage() {
             padding: 18,
           }}
         >
-          <h2 style={{ margin: 0, fontSize: 16, letterSpacing: "-0.2px" }}>Early access</h2>
+          <h2 style={{ margin: 0, fontSize: 16, letterSpacing: "-0.2px" }}>Service updates</h2>
           <p style={{ margin: "10px 0 0", color: "rgba(14, 15, 18, 0.72)", lineHeight: "22px" }}>
-            Features may change, break, or be removed as we iterate quickly based on feedback.
+            We may update, improve, or remove features over time as the product evolves.
           </p>
 
           <h2 style={{ margin: "18px 0 0", fontSize: 16, letterSpacing: "-0.2px" }}>Your content</h2>
@@ -117,4 +117,3 @@ export default function TermsPage() {
     </main>
   );
 }
-

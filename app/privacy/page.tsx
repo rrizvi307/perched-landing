@@ -66,7 +66,7 @@ export default function PrivacyPage() {
         <div style={{ marginTop: 22 }}>
           <h1 style={{ margin: 0, fontSize: 34, letterSpacing: "-0.9px", lineHeight: 1.12 }}>Privacy Policy</h1>
           <p style={{ margin: "10px 0 0", color: "rgba(14, 15, 18, 0.72)", lineHeight: "22px" }}>
-            Perched is in early access. This policy explains what we collect and how we use it.
+            This policy explains what we collect and how we use it.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function PrivacyPage() {
         >
           <h2 style={{ margin: 0, fontSize: 16, letterSpacing: "-0.2px" }}>Information we collect</h2>
           <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "rgba(14, 15, 18, 0.78)", lineHeight: "22px" }}>
-            <li>Info you provide (e.g., email for the waitlist, profile details).</li>
+            <li>Info you provide (e.g., name and email if you sign up for updates, profile details).</li>
             <li>Content you create in the app (check-ins, captions, tags, photos you choose to upload).</li>
             <li>Approximate location when you grant permission (to detect spots and show nearby results).</li>
             <li>Basic device/app diagnostics (to keep the app reliable and improve performance).</li>
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
           <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "rgba(14, 15, 18, 0.78)", lineHeight: "22px" }}>
             <li>Provide core features (explore, feed, check-in, and recap).</li>
             <li>Personalize results based on vibes, tags, and what is happening now.</li>
-            <li>Communicate with you about early access and product updates.</li>
+            <li>Communicate with you about app updates, launches, and announcements.</li>
             <li>Protect the community (safety, moderation, abuse prevention).</li>
           </ul>
 
@@ -114,4 +114,3 @@ export default function PrivacyPage() {
     </main>
   );
 }
-
