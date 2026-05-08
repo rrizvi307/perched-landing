@@ -9,8 +9,6 @@ export const SITE = {
 
 export const HERO = {
   title: "find your spot. share the vibe.",
-  subline:
-    "Check in at cafes, libraries, parks, and co-working spaces to share live signals and help people find the right spot.",
   cta: "Download on the App Store",
   ctaUrl: "https://apps.apple.com/us/app/perched-find-great-spots/id6759113835",
 } as const;

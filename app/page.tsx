@@ -20,7 +20,6 @@ export default function Page() {
           </div>
 
           <h1 id="hero-title">{HERO.title}</h1>
-          <p className="subline">{HERO.subline}</p>
 
           <a className="cta" href={HERO.ctaUrl}>
             {HERO.cta}
@@ -95,14 +94,6 @@ export default function Page() {
           font-size: clamp(2.45rem, 10vw, 4.35rem);
           line-height: 0.98;
           letter-spacing: 0;
-        }
-
-        .subline {
-          margin: 1rem auto 1.55rem;
-          color: rgba(23, 32, 61, 0.72);
-          font-size: clamp(1rem, 3.8vw, 1.16rem);
-          line-height: 1.45;
-          max-width: 38rem;
         }
 
         .cta {
