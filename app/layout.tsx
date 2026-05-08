@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Perched — Find your spot. Share the vibe.",
+        alt: "Perched - find your spot. share the vibe.",
       },
     ],
   },
