@@ -69,7 +69,7 @@ export default function Page() {
         }
 
         .hero {
-          --hero-gap: 1.45rem;
+          --hero-gap: 2.25rem;
           width: 100%;
           margin: auto 0;
           padding: 4rem 0 2rem;
