@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -29,19 +30,17 @@ export default function PrivacyPage() {
               textDecoration: "none",
             }}
           >
-            <img
-              src="/perched-mark.png"
+            <Image
+              src="/perched-logo-v3.svg"
               alt="Perched"
-              width={24}
-              height={24}
+              width={140}
+              height={42}
               style={{
-                borderRadius: 12,
-                border: "1px solid rgba(231, 232, 236, 0.95)",
-                background: "var(--paper, #fbfaf8)",
-                objectFit: "cover",
+                width: 120,
+                height: "auto",
+                objectFit: "contain",
               }}
             />
-            <span>Perched</span>
           </Link>
 
           <Link

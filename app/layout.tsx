@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: SEO.description,
   keywords: [...SEO.keywords],
   icons: {
-    icon: [{ url: "/icon.png" }],
+    icon: [{ url: "/perched-favicon.png" }],
     apple: [{ url: "/apple-icon.png" }],
   },
   openGraph: {
