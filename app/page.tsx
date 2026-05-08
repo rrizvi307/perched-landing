@@ -69,6 +69,7 @@ export default function Page() {
         }
 
         .hero {
+          --hero-gap: 1.45rem;
           width: 100%;
           margin: auto 0;
           padding: 4rem 0 2rem;
@@ -80,7 +81,7 @@ export default function Page() {
           min-height: 0;
           display: grid;
           place-items: center;
-          margin: 0 auto 1.45rem;
+          margin: 0 auto var(--hero-gap);
         }
 
         .logo-lockup {
@@ -100,6 +101,7 @@ export default function Page() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
+          margin-top: var(--hero-gap);
           min-height: 3.2rem;
           padding: 0.85rem 1.25rem;
           border-radius: 999px;
